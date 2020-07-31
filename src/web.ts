@@ -8,10 +8,20 @@ export class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlug
       platforms: ['web']
     });
   }
-
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  auth(_options: { apiKey: string; refUserId: string; nickname: string; }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  registerNotifications(_options: { fcmToken: string; }): Promise<{ topic: string; }> {
+    throw new Error("Method not implemented.");
+  }
+  showFeedScreen(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  showWidget(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  hideWidget(): Promise<void> {
+    throw new Error("Method not implemented.");
   }
 }
 

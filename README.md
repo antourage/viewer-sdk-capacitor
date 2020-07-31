@@ -120,7 +120,7 @@ Android 5+
 ## Installation
 
 AntViewer is available through [npm](https://www.npmjs.com). To install
-it  run `$ npm install Antourage_capacitor`.
+it  run `$ npm install antourage_capacitor`.
 
 ### Android additional configuration
 
