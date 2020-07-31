@@ -1579,7 +1579,8 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen poll_answer_max_size
-dimen poll_banner_size
+dimen poll_banner_padding
+dimen poll_divider_double_size
 dimen poll_divider_size
 dimen preference_dropdown_padding_start
 dimen preference_icon_minWidth
@@ -2430,6 +2431,7 @@ id tvTitle
 id tvViewers
 id tv_live_end_time
 id tv_title_dialog
+id txtAt
 id txtAutoPlayDuration_live
 id txtAutoPlayDuration_vod
 id txtCommentAuthor_holder
@@ -2609,6 +2611,7 @@ layout item_message_portrait
 layout item_new_comments
 layout item_new_live
 layout item_poll
+layout item_poll_banner
 layout item_progress
 layout item_separator
 layout item_skip_curtain
@@ -2768,6 +2771,7 @@ string ant_new_vod
 string ant_no_connection
 string ant_no_internet_action
 string ant_poll_vote
+string ant_recent
 string ant_save
 string ant_send
 string ant_server_error

@@ -1578,7 +1578,8 @@ int dimen notification_subtext_size 0x0
 int dimen notification_top_pad 0x0
 int dimen notification_top_pad_large_text 0x0
 int dimen poll_answer_max_size 0x0
-int dimen poll_banner_size 0x0
+int dimen poll_banner_padding 0x0
+int dimen poll_divider_double_size 0x0
 int dimen poll_divider_size 0x0
 int dimen preference_dropdown_padding_start 0x0
 int dimen preference_icon_minWidth 0x0
@@ -2429,6 +2430,7 @@ int id tvTitle 0x0
 int id tvViewers 0x0
 int id tv_live_end_time 0x0
 int id tv_title_dialog 0x0
+int id txtAt 0x0
 int id txtAutoPlayDuration_live 0x0
 int id txtAutoPlayDuration_vod 0x0
 int id txtCommentAuthor_holder 0x0
@@ -2608,6 +2610,7 @@ int layout item_message_portrait 0x0
 int layout item_new_comments 0x0
 int layout item_new_live 0x0
 int layout item_poll 0x0
+int layout item_poll_banner 0x0
 int layout item_progress 0x0
 int layout item_separator 0x0
 int layout item_skip_curtain 0x0
@@ -2767,6 +2770,7 @@ int string ant_new_vod 0x0
 int string ant_no_connection 0x0
 int string ant_no_internet_action 0x0
 int string ant_poll_vote 0x0
+int string ant_recent 0x0
 int string ant_save 0x0
 int string ant_send 0x0
 int string ant_server_error 0x0
