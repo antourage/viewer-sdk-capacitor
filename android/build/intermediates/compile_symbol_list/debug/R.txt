@@ -2769,6 +2769,7 @@ int string ant_new_poll 0x0
 int string ant_new_vod 0x0
 int string ant_no_connection 0x0
 int string ant_no_internet_action 0x0
+int string ant_pipe 0x0
 int string ant_poll_vote 0x0
 int string ant_recent 0x0
 int string ant_save 0x0

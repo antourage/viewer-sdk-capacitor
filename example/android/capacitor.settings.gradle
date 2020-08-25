@@ -2,5 +2,5 @@
 include ':capacitor-android'
 project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')
 
-include ':Antourage_cap'
-project(':Antourage_cap').projectDir = new File('../node_modules/Antourage_cap/android')
+include ':antourage_capacitor'
+project(':antourage_capacitor').projectDir = new File('../node_modules/antourage_capacitor/android')

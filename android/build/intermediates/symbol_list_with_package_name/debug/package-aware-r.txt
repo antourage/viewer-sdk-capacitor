@@ -2770,6 +2770,7 @@ string ant_new_poll
 string ant_new_vod
 string ant_no_connection
 string ant_no_internet_action
+string ant_pipe
 string ant_poll_vote
 string ant_recent
 string ant_save
