@@ -48,6 +48,9 @@ public class AntViewerPlugin: CAPPlugin {
 
   @objc
   func setPosition(_ call: CAPPluginCall) {
+    guard call.getString("platform") != "android" else {
+      return
+    }
     guard let positionString = call.getString("position"),
       let position = WidgetPosition(rawValue: positionString) else {
       return call.reject("Must provide valid position")

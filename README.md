@@ -210,7 +210,9 @@ Also you can set custom horizontal and vertical margin for each position. But so
 import { Plugins } from '@capacitor/core';
 const { AntViewerPlugin } = Plugins;
 
-AntViewerPlugin.setPosition({ position: "bottomLeft" });
+AntViewerPlugin.setPosition({ platform: "ios", position: "bottomLeft" }); // iOS only
+AntViewerPlugin.setPosition({ platform: "android", position: "bottomLeft" }); // android only
+AntViewerPlugin.setPosition({ position: "bottomLeft" }); // both
 
 AntViewerPlugin.setMargins({platform: "ios", horizontal: 0, vertical: 30 }); // iOS only
 AntViewerPlugin.setMargins({platform: "android", horizontal: 10, vertical: 50 }); // android only

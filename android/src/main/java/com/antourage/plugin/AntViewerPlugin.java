@@ -59,7 +59,9 @@ public class AntViewerPlugin extends Plugin {
     @PluginMethod()
     public void setPosition(PluginCall call) {
         String position = call.getString("position");
-
+        if (call.getString("platform") == "ios") {
+            return;
+        }
         if (position == null || position.isEmpty()) {
             call.reject("Must provide valid position");
             return;

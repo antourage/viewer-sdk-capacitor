@@ -133,7 +133,7 @@
     <orderEntry type="library" name="Gradle: androidx.savedstate:savedstate:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-runtime:2.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.antourage:AntViewer-android:0.2.18@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.antourage:AntViewer-android:0.2.19@aar" level="project" />
     <orderEntry type="module" module-name="capacitor-android" />
   </component>
 </module>
