@@ -9,5 +9,9 @@ CAP_PLUGIN(AntViewerPlugin, "AntViewerPlugin",
 					 CAP_PLUGIN_METHOD(auth, CAPPluginReturnPromise);
 					 CAP_PLUGIN_METHOD(showWidget, CAPPluginReturnPromise);
 					 CAP_PLUGIN_METHOD(hideWidget, CAPPluginReturnPromise);
+					 CAP_PLUGIN_METHOD(setPosition, CAPPluginReturnPromise);
+					 CAP_PLUGIN_METHOD(setMargins, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(lockCapacitorControllerToPortrait, CAPPluginReturnPromise);
+           
 )
 

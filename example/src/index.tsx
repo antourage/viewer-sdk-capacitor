@@ -17,6 +17,20 @@ const render = () => {
         .catch((error: any) => {
             console.log(error);
         });
+    AntViewerPlugin.addListener('onViewerAppear', (info: any) => {
+        console.log('ios viewer did appear');
+        // window.screen.orientation.unlock();
+        });
+        
+        AntViewerPlugin.addListener('onViewerDisappear', (info: any) => {
+        console.log('ios viewer did disappear');
+        //window.screen.orientation.lock('portrait');
+        });
+
+    AntViewerPlugin.setPosition({ position: "bottomLeft" });
+    AntViewerPlugin.setMargins({ horizontal: 0, vertical: 50 });
+    // AntViewerPlugin.lockCapacitorControllerToPortrait();
+
     ReactDOM.render(<App />, document.getElementById('root'));
 }
 

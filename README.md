@@ -38,10 +38,8 @@ When there isn’t a live video, but there are unwatched VOD’s the widget anim
 
 ### The Main Menu
 
-The main menu allows the user to navigate through multiple live and new videos. Whilst navigating through the videos, if they stop scolling a video will play without sound.
-
-If a user clicks on the comment or poll icon below any video they will be taken directly to the chat or poll within that video so that they can contribute immediately.
-
+The main menu allows the user to navigate through multiple live and new videos. Whilst navigating through the videos, if they stop scolling a video will play without sound.  
+If a user clicks on the comment or poll icon below any video they will be taken directly to the chat or poll within that video so that they can contribute immediately.  
 The main menu can also be customised, by editing the logo in the corner of the screen to surface the organisation or sponsors. The title of the menu can also be customised.
 
 <img src="./screenshots/image11.png" alt="Screenshots" width="40%" />
@@ -57,8 +55,7 @@ The video player may be used in portrait or landscape mode. In both modes, the v
 
 ### Viewing On-demand videos
 
-When the user taps on a video, the video begins playing at the beginning, or if this video has already been partially viewed, it will begin playing at the last point the viewer watched. The Antourage Widget keeps track of which videos the user has seen, and updates the number on the magnetic button accordingly.
-
+When the user taps on a video, the video begins playing at the beginning, or if this video has already been partially viewed, it will begin playing at the last point the viewer watched. The Antourage Widget keeps track of which videos the user has seen, and updates the number on the magnetic button accordingly.  
 Each video shows the name of the video, name of the broadcaster, total time, and total view count.
 
 ### Display Name
@@ -71,16 +68,14 @@ Comments are contributed by viewers of the live broadcast only. When a video is 
 
 ### Polls
 
-Polls are created by the broadcaster, and sent out during a live broadcast. They appear on the screen when they are first pushed out to the audience, and viewers can respond or simply close the poll if they do not want to answer. If they answer, they are shown the results right away, and they can see updated results as they come in.
-
+Polls are created by the broadcaster, and sent out during a live broadcast. They appear on the screen when they are first pushed out to the audience, and viewers can respond or simply close the poll if they do not want to answer. If they answer, they are shown the results right away, and they can see updated results as they come in.  
 These polls are sponsorable and images can be uploaded from the web application so that they surface on behalf of all broadcasters. This uploaded images can also be clickable and link to web pages for special offers or further sponsor activation.
 
 <img src="./screenshots/image7.png" alt="Screenshots" width="40%" />
 
 ### The Curtain
 
-The curtain feature is supposed to mimic the purpose of a curtain at the theatre. To serve a business purpose such as sponsor exposure or ticket sales, a curtain be lowered at any time. Alternatively, a user can also use the curtain to hide what they are streaming whilst they prepare simulcasts or perform duties off camera.
-
+The curtain feature is supposed to mimic the purpose of a curtain at the theatre. To serve a business purpose such as sponsor exposure or ticket sales, a curtain be lowered at any time. Alternatively, a user can also use the curtain to hide what they are streaming whilst they prepare simulcasts or perform duties off camera.  
 Multiple curtains can be uploaded at the same time, therefore different messages/sponsors that you can be ready to raise awareness of when ready. 
 
 <div style="display: flex; justify-content: center; ">
@@ -111,10 +106,8 @@ from the example directory.
 
 ## Requirements
 
-iOS 11.3 +
-
-Android 5+
-
+iOS 11.3 +  
+Android 5+  
 [Capacitor](https://capacitorjs.com/docs/getting-started)
 
 ## Installation
@@ -195,6 +188,75 @@ AntViewerPlugin.showWidget();
 
 AntViewerPlugin.hideWidget();
 
+```
+
+### Widget position
+
+You can set any position from the list:
+* topLeft
+* midLeft
+* bottomLeft
+
+* topMid
+* bottomMid
+
+* topRight
+* midRight
+* bottomRight
+
+Also you can set custom horizontal and vertical margin for each position. But some positions may ignore it. Max horizontal - 50, max vertical - 220.
+
+``` javascript
+import { Plugins } from '@capacitor/core';
+const { AntViewerPlugin } = Plugins;
+
+AntViewerPlugin.setPosition({ position: "bottomLeft" });
+
+AntViewerPlugin.setMargins({platform: "ios", horizontal: 0, vertical: 30 }); // iOS only
+AntViewerPlugin.setMargins({platform: "android", horizontal: 10, vertical: 50 }); // android only
+AntViewerPlugin.setMargins({horizontal: 0, vertical: 30 }); // both
+
+```
+
+### Orientation (iOS only)
+
+Your app may support only portrait orientation, but our widget should be able to use landscape orientation while playing video.
+We suggest two approaches to solve it.
+
+First of all you should enable ladnscape orientation in xcode project.
+<img src="./screenshots/orientation.png" alt="Screenshots" width="100%" />
+
+First approach:
+
+You can use `cordova-plugin-screen-orientation` to be able to lock orientations occasionally depending on the content.
+
+Just add two listeners to handle widget state:
+``` javascript
+import { Plugins } from '@capacitor/core';
+const { AntViewerPlugin } = Plugins;
+
+AntViewerPlugin.addListener('onViewerAppear', (info: any) => {
+  console.log('viewer did appear');
+  // window.screen.orientation.unlock();
+});
+
+AntViewerPlugin.addListener('onViewerDisappear', (info: any) => {
+  console.log('viewer did disappear');
+  //window.screen.orientation.lock('portrait');
+});
+
+```
+
+Second approach (a bit easier):
+
+I can lock main capacitor controller to portrait from plugin (but application will support lanscape). It means that your ionic UI that runs in webView will be in portrait only, but everthing outside capacitor controller (Antrourage screens, or some native modals etc) will be able to use landscape.
+
+You just need to call this function after your app starts:
+``` javascript
+import { Plugins } from '@capacitor/core';
+const { AntViewerPlugin } = Plugins;
+
+AntViewerPlugin.lockCapacitorControllerToPortrait();
 ```
 
 ## Author

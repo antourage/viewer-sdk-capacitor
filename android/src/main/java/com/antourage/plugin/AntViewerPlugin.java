@@ -55,6 +55,42 @@ public class AntViewerPlugin extends Plugin {
         });
     }
 
+
+    @PluginMethod()
+    public void setPosition(PluginCall call) {
+        String position = call.getString("position");
+
+        if (position == null || position.isEmpty()) {
+            call.reject("Must provide valid position");
+            return;
+        }
+        this.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                antFab.setPosition(position);
+            }
+        });
+    }
+
+    @PluginMethod()
+    public void setMargins(PluginCall call) {
+        Integer horizontal = call.getInt("horizontal");
+        Integer vertical = call.getInt("vertical");
+        if (call.getString("platform") == "ios" || horizontal == null || vertical == null) {
+            return;
+        }
+        this.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                antFab.setMargins(horizontal, vertical);
+            }
+        });
+
+    }
+
+    @PluginMethod()
+    public void lockCapacitorControllerToPortrait(PluginCall call) { } //iOS only
+
     @PluginMethod()
     public void showFeedScreen(PluginCall call) {
         Intent intent = new Intent(getContext(), AntourageActivity.class);
@@ -95,15 +131,7 @@ public class AntViewerPlugin extends Plugin {
                 }
                 antFab.onResume();
                 if (antFab.getParent() == null) {
-                    ViewGroup viewGroup = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
-
-                    CoordinatorLayout.LayoutParams fabLayoutParams = new CoordinatorLayout.LayoutParams(
-                            CoordinatorLayout.LayoutParams.WRAP_CONTENT,
-                            CoordinatorLayout.LayoutParams.WRAP_CONTENT
-                    );
-                    fabLayoutParams.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL ;
-
-                    viewGroup.addView(antFab, fabLayoutParams);
+                    antFab.showFab(activity);
                 }
             }
         });
