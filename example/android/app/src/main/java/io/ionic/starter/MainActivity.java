@@ -9,15 +9,29 @@ import com.getcapacitor.Plugin;
 import java.util.ArrayList;
 
 public class MainActivity extends BridgeActivity {
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+    private AntViewerPlugin antPlugin;
 
-    // Initializes the Bridge
-    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-      // Additional plugins you've installed go here
-      // Ex: add(TotallyAwesomePlugin.class);
-      add(AntViewerPlugin.class);
-    }});
-  }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+//     Initializes the Bridge
+        this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
+            // Additional plugins you've installed go here
+            add(AntViewerPlugin.class);
+        }});
+        antPlugin = (AntViewerPlugin) getBridge().getPlugin(AntViewerPlugin.class.getSimpleName()).getInstance();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        antPlugin.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        antPlugin.onResume();
+    }
 }

@@ -151,4 +151,14 @@ public class AntViewerPlugin extends Plugin {
             }
         });
     }
+
+    @PluginMethod()
+    public void onPause() {
+        if(antFab!=null) antFab.onPause();
+    }
+
+    @PluginMethod()
+    public void onResume() {
+        if(antFab!=null) antFab.onResume();
+    }
 }
