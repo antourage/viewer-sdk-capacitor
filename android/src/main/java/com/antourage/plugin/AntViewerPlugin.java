@@ -2,10 +2,7 @@ package com.antourage.plugin;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Gravity;
 import android.view.ViewGroup;
-
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.antourage.weaverlib.screens.base.AntourageActivity;
 import com.antourage.weaverlib.ui.fab.AntourageFab;
@@ -16,9 +13,6 @@ import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
-
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 
 @NativePlugin()
 public class AntViewerPlugin extends Plugin {
@@ -91,7 +85,8 @@ public class AntViewerPlugin extends Plugin {
     }
 
     @PluginMethod()
-    public void lockCapacitorControllerToPortrait(PluginCall call) { } //iOS only
+    public void lockCapacitorControllerToPortrait(PluginCall call) {
+    } //iOS only
 
     @PluginMethod()
     public void showFeedScreen(PluginCall call) {
@@ -154,11 +149,18 @@ public class AntViewerPlugin extends Plugin {
 
     @PluginMethod()
     public void onPause() {
-        if(antFab!=null) antFab.onPause();
+        if (antFab != null) antFab.onPause();
     }
 
     @PluginMethod()
     public void onResume() {
-        if(antFab!=null) antFab.onResume();
+        if (antFab != null) antFab.onResume();
     }
+
+    @PluginMethod()
+    public void setLocale(PluginCall call) {
+        String lang = call.getString("locale");
+        if (antFab != null) antFab.setLocale(lang);
+    }
+
 }

@@ -117,5 +117,14 @@ public class AntViewerPlugin: CAPPlugin {
       self.bridge.viewController.present(feed, animated: true, completion: nil)
     }
   }
+
+  @objc
+  func onPause(_ call: CAPPluginCall) {} // Android only
+  
+  @objc
+  func onResume(_ call: CAPPluginCall) {} // Android only
+  
+  @objc
+  func setLocale(_ call: CAPPluginCall) {} // Android only
   
 }
