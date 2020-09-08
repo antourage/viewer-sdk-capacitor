@@ -26,10 +26,13 @@ export class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlug
   setPosition(_options: { platform: string; position: string; }): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  setMargins(_options: {platform: string; horizontal: number; vertical: number; }): Promise<void> {
+  setMargins(_options: { platform: string; horizontal: number; vertical: number; }): Promise<void> {
     throw new Error("Method not implemented.");
   }
   lockCapacitorControllerToPortrait(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setLocale(_options: { locale: string; }): Promise<void> {
     throw new Error("Method not implemented.");
   }
 }
