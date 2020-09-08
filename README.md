@@ -120,7 +120,8 @@ it  run `$ npm install antourage_capacitor`.
 1. You should find app build.gradle file and add  `maven { url 'https://jitpack.io' }` to the repositories block.
 <img src="./screenshots/android2.png" alt="Screenshots" width="100%" />
 
-2. You should add `import com.antourage.plugin.AntViewerPlugin;` and `add(AntViewerPlugin.class);` into MainActivity class:
+2. You should create variable `private AntViewerPlugin antPlugin;`, add `import com.antourage.plugin.AntViewerPlugin;` , `add(AntViewerPlugin.class);` and initialize antPlugin with `antPlugin = (AntViewerPlugin) getBridge().getPlugin(AntViewerPlugin.class.getSimpleName()).getInstance();` in MainActivity class.
+Also you need to add `antPlugin.onPause();` and `antPlugin.onResume();` to overriden `onPause` and `onResume` methods accordingly, as you see below:
 <img src="./screenshots/android1.png" alt="Screenshots" width="100%" />
 
 `npx cap sync`
@@ -261,6 +262,18 @@ const { AntViewerPlugin } = Plugins;
 AntViewerPlugin.lockCapacitorControllerToPortrait();
 ```
 
+### Localization (Android only)
+
+By default android widget will use device's language: Swedish if it is chosen as device’s default language and English in other cases. But if you want to force app to use language that differs from device’s one - you can use method `setLocale(lang: String)`. Currently widget supports only English("en") and Swedish("sv").
+
+``` javascript
+import { Plugins } from '@capacitor/core';
+const { AntViewerPlugin } = Plugins;
+
+AntViewerPlugin.setLocale({ locale: "en" }); // or "sv"
+
+```
+ 
 ## Author
 
 Mykola Vaniurskyi, mv@leobit.com
