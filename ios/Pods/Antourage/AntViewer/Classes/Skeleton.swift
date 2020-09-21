@@ -10,18 +10,16 @@ import UIKit
 import AntViewerExt
 
 protocol SkeletonDelegate: class {
+  var collectionView: UICollectionView! { get set }
   func skeletonWillHide(_ skeleton: Skeleton)
 }
 
 class Skeleton: NSObject {
-
-  
   weak var delegate: SkeletonDelegate?
   var collectionView: UICollectionView? {
     didSet {
       collectionView?.delegate = self
       collectionView?.dataSource = self
-//      collectionView?.isUserInteractionEnabled = false
       let cellNib = UINib(nibName: String(describing: SkeletonCell.self), bundle: Bundle(for: type(of: self)))
       collectionView?.register(cellNib, forCellWithReuseIdentifier: "skeletonCell")
       collectionView?.reloadData()
@@ -42,6 +40,11 @@ class Skeleton: NSObject {
     return view
   }()
 
+  var logoImage: UIImage? {
+    didSet {
+      emptyDataSourceView.logoImage = logoImage
+    }
+  }
 
   private var animator: Animator?
 
@@ -96,6 +99,9 @@ class Skeleton: NSObject {
     guard isVODLoaded.isLoaded, isLiveLoaded.isLoaded else { return }
     if isVODLoaded.isEmpty, isLiveLoaded.isEmpty, isReachable {
       animator?.stop(immediately: true)
+      if collectionView == nil {
+        collectionView = delegate?.collectionView
+      }
       setEmptyDataSourseViewVisible(visible: true)
       state = .emptyDataSource
     }
@@ -127,7 +133,6 @@ class Skeleton: NSObject {
       state = .noConnection
       startAnimate()
       cell?.iconImageView.image = UIImage.image("SkeletonNoConnection")
-//      collectionView?.isUserInteractionEnabled = true
     }
   }
 
@@ -141,7 +146,6 @@ class Skeleton: NSObject {
       return
     }
     state = .loading
-//    collectionView?.isUserInteractionEnabled = false
     cell?.iconImageView.image = UIImage.image("SkeletonPlaceholder")
     cell?.loaderImageView.image = UIImage.image("PlaceholderIconLoad")
     startAnimate()
@@ -152,7 +156,6 @@ class Skeleton: NSObject {
     startAnimate()
     setEmptyDataSourseViewVisible(visible: false)
     cell?.iconImageView.image = UIImage.image("SkeletonError")
-//    collectionView?.isUserInteractionEnabled = true
     state = .onError
 
   }
@@ -164,7 +167,6 @@ class Skeleton: NSObject {
   }
 
   private func setEmptyDataSourseViewVisible(visible: Bool) {
-//    collectionView?.isUserInteractionEnabled = visible
     cell?.contentView.alpha = visible ? 0 : 1
     collectionView?.backgroundView = visible ? emptyDataSourceView : nil
   }

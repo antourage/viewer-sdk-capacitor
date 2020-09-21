@@ -1,6 +1,6 @@
 {
   "name": "antourage_capacitor",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Antourage widget plugin",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -13,11 +13,11 @@
   "author": "mv@leobit.com",
   "license": "MIT",
   "dependencies": {
-    "@capacitor/core": "latest"
+    "@capacitor/core": "^2.4.1"
   },
   "devDependencies": {
-    "@capacitor/android": "latest",
-    "@capacitor/ios": "latest",
+    "@capacitor/android": "^2.4.1",
+    "@capacitor/ios": "^2.4.1",
     "rimraf": "^3.0.0",
     "typescript": "^3.9.7"
   },

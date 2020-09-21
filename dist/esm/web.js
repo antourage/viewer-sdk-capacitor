@@ -21,6 +21,18 @@ export class AntViewerPluginWeb extends WebPlugin {
     hideWidget() {
         throw new Error("Method not implemented.");
     }
+    setPosition(_options) {
+        throw new Error("Method not implemented.");
+    }
+    setMargins(_options) {
+        throw new Error("Method not implemented.");
+    }
+    lockCapacitorControllerToPortrait() {
+        throw new Error("Method not implemented.");
+    }
+    setLocale(_options) {
+        throw new Error("Method not implemented.");
+    }
 }
 const AntViewerPlugin = new AntViewerPluginWeb();
 export { AntViewerPlugin };

@@ -15,6 +15,19 @@ export declare class AntViewerPluginWeb extends WebPlugin implements AntViewerPl
     showFeedScreen(): Promise<void>;
     showWidget(): Promise<void>;
     hideWidget(): Promise<void>;
+    setPosition(_options: {
+        platform: string;
+        position: string;
+    }): Promise<void>;
+    setMargins(_options: {
+        platform: string;
+        horizontal: number;
+        vertical: number;
+    }): Promise<void>;
+    lockCapacitorControllerToPortrait(): Promise<void>;
+    setLocale(_options: {
+        locale: string;
+    }): Promise<void>;
 }
 declare const AntViewerPlugin: AntViewerPluginWeb;
 export { AntViewerPlugin };

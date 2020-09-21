@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
 	package
-		ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:3:7-53
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:3:7-53
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:3-4:14
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:13-71
+		ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml:2:13-71
 uses-sdk
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		ADDED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
-		INJECTED from /Users/nazar_mykhailevych/AndroidStudioProjects/ant_ionic/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		ADDED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/mykolavaniurskyi/work/AntViewer_ionic/example/node_modules/antourage_capacitor/android/src/main/AndroidManifest.xml

@@ -36,15 +36,8 @@ public class AntViewerPlugin extends Plugin {
                 if (antFab == null) {
                     antFab = new AntourageFab(getActivity());
                 }
-
-                antFab.authWith(apiKey, refUserId, nickname, result -> {
-                    if (result instanceof UserAuthResult.Failure) {
-                        call.reject(((UserAuthResult.Failure) result).getCause());
-                    } else if (result instanceof UserAuthResult.Success) {
-                        call.resolve();
-                    }
-                    return null;
-                });
+                antFab.authWith(apiKey, refUserId, nickname);
+                call.resolve();
             }
         });
     }

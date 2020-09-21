@@ -83,15 +83,8 @@ public class AntViewerPlugin: CAPPlugin {
     AntWidget.authWith(
       apiKey: apiKey,
       refUserId: refUserId,
-      nickname: nickname) { result in
-        switch result {
-        case .success:
-          call.resolve()
-        case .failure(let error):
-          call.reject(error.localizedDescription)
-        }
-        print("Auth: \(result)")
-    }
+      nickname: nickname)
+    call.resolve()
   }
   
   @objc

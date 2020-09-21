@@ -143,12 +143,7 @@ AntViewerPlugin.auth({
         refUserId: "put_user_id_from_your_base_or_null",
         nickname: "put_user_nickname_from_your_base_or_null"
 })
-.then(() => {
-  console.log("Success");
-})
-.catch(error => {
-  console.log(error);
-});
+
 ```
 
 ### Push notifications (Firebase approach)

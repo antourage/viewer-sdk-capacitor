@@ -131,9 +131,12 @@ final class PlayingState: PlayerState {
             else { assertionFailure("media should exist"); return }
 
         itemPlaybackObservingService.onPlaybackStalled = { [weak self] in
+          print("Player state: onPlaybackStalled")
             self?.redirectToWaitingForNetworkState()
         }
-        itemPlaybackObservingService.onFailedToPlayToEndTime = { [weak self] in self?.redirectToWaitingForNetworkState()
+        itemPlaybackObservingService.onFailedToPlayToEndTime = { [weak self] in
+          print("Player state: onFailedToPlayToEndTime")
+          self?.redirectToWaitingForNetworkState()
         }
         itemPlaybackObservingService.onPlayToEndTime = { [weak self] in
             guard let strongSelf = self else { return }
