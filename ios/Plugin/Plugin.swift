@@ -24,10 +24,11 @@ public class AntViewerPlugin: CAPPlugin {
   @objc
   func showWidget(_ call: CAPPluginCall) {
     DispatchQueue.main.async { [weak self] in
-      guard let mainView = self?.bridge.viewController.view else { return }
-      if self?.widget.view.superview != nil { return }
-      guard let widgetView = self?.widget.view else { return }
-      mainView.addSubview(widgetView)
+      guard
+        self?.widget.view.superview == nil,
+        let widgetView = self?.widget.view else { return }
+      let mainView = self?.bridge.viewController.view
+      mainView?.addSubview(widgetView)
     }
   }
   
