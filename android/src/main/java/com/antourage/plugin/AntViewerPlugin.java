@@ -119,9 +119,9 @@ public class AntViewerPlugin extends Plugin {
                 if (antFab == null) {
                     antFab = new AntourageFab(activity);
                 }
-                antFab.onResume();
                 if (antFab.getParent() == null) {
                     antFab.showFab(activity);
+                    antFab.onResume();
                 }
             }
         });
