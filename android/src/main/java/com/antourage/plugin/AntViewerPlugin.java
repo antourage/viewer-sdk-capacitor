@@ -152,8 +152,13 @@ public class AntViewerPlugin extends Plugin {
 
     @PluginMethod()
     public void setLocale(PluginCall call) {
-        String lang = call.getString("locale");
-        if (antFab != null) antFab.setLocale(lang);
+        this.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String lang = call.getString("locale");
+                if (antFab != null) antFab.setLocale(lang);
+            }
+        });
     }
 
 }
