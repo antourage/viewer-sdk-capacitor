@@ -9,7 +9,7 @@ end
 
 target 'Plugin' do
   capacitor_pods
-	pod 'Antourage', '~> 2.0.19'
+	pod 'Antourage', '~> 2.0.20'
 end
 
 target 'PluginTests' do
