@@ -2,6 +2,7 @@ package com.antourage.plugin;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.ViewGroup;
 
 import com.antourage.weaverlib.screens.base.AntourageActivity;
