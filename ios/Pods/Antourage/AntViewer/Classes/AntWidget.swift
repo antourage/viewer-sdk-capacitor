@@ -99,17 +99,17 @@ public enum WidgetPosition: String {
     if isLeft {
       x = validMargins.horizontal
     } else if isRight {
-      x = screenSize.width - width - validMargins.horizontal - 6 // badge
+      x = screenSize.width - AntWidget.width - validMargins.horizontal - 6 // badge
     } else {
-      x = (screenSize.width - width)/2
+      x = (screenSize.width - AntWidget.width)/2
     }
     
     if isTop {
       y = validMargins.vertical
     } else if isBottom {
-      y = screenSize.height - width - validMargins.vertical
+      y = screenSize.height - AntWidget.width - validMargins.vertical
     } else {
-      y = (screenSize.height - width)/2
+      y = (screenSize.height - AntWidget.width)/2
     }
     return CGPoint(x: x, y: y)
   }
@@ -125,10 +125,15 @@ public struct WidgetMargins {
   }
 }
 
-private let width: CGFloat = 84
-
-public class AntWidget {
+@objc
+public class AntWidget: NSObject {
+  
+  @objc
+  public static let width: CGFloat = 84
+  
+  @objc
   public static let shared = AntWidget()
+  
   private var dataSource = DataSource()
   private var animationProcessing = false
   private var isBackground = false
@@ -152,7 +157,7 @@ public class AntWidget {
   
   private lazy var widgetView: WidgetView = {
     let point = widgetPosition.getPointWith(margins: margins, for: nil)
-    let rect = CGRect(x: point.x, y: point.y, width: width, height: width)
+    let rect = CGRect(x: point.x, y: point.y, width: AntWidget.width, height: AntWidget.width)
     
     let view = WidgetView(frame: rect)
     view.backgroundColor = .clear
@@ -163,6 +168,9 @@ public class AntWidget {
   private var currentContent: VideoContent?
   private var preparedContent: VideoContent?
   private var visible = false
+  private var feedShown = false
+  private var failedPlaybackCount = 0
+  private var failedPlaybackDebouncer = Debouncer(delay: 15)
   
   private var position: WidgetPosition? {
     didSet {
@@ -175,6 +183,7 @@ public class AntWidget {
       updatePosition()
     }
   }
+  
   
   public var widgetPosition: WidgetPosition {
     get {
@@ -193,22 +202,22 @@ public class AntWidget {
       margins = newValue
     }
   }
-  
+  @objc
   public var view: UIView { widgetView }
   @objc
   public var onViewerAppear: ((NSDictionary) -> Void)?
   @objc
   public var onViewerDisappear: ((NSDictionary) -> Void)?
 
-  private init() {
+  private override init() {
+    super.init()
     NotificationCenter.default.addObserver(self, selector: #selector(handleStreamUpdate(_:)), name: NSNotification.Name(rawValue: "StreamsUpdated"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleViewerDisappear(_:)), name: NSNotification.Name(rawValue: "ViewerWillDisappear"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleViewerAppear(_:)), name: NSNotification.Name(rawValue: "ViewerWillAppear"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
-
+    UIDevice.current.isBatteryMonitoringEnabled = true
     AppAuth.shared.auth()
-    Statistic.sync()
     widgetView.prepare(for: .resting, completion: nil)
   }
 
@@ -240,16 +249,9 @@ public class AntWidget {
   }
 
   @objc
-  public func getListController() -> UIViewController {
-    AppAuth.shared.auth()
-    Statistic.sync()
-
-    let listController = StreamListController(nibName: "StreamListController", bundle: Bundle(for: AntWidget.self))
-    listController.dataSource = dataSource
-
-    let navController = NavigationController(rootViewController: listController)
-    navController.modalPresentationStyle = .fullScreen
-    return navController
+  public func showFeed() {
+    if feedShown { return }
+    showFeed(with: nil, animated: false)
   }
   
   private func updatePosition(size: CGSize? = nil) {
@@ -263,6 +265,7 @@ public class AntWidget {
     switch currentState {
     case .resting:
       if case .resting = state { return }
+      if case .live = state { return }
     case .vod:
       if case .vod = state {
         currentContent = preparedContent
@@ -289,13 +292,14 @@ public class AntWidget {
     let media = ModernAVPlayerMedia(url: url, type: .stream(isLive: true))
     let player = ModernAVPlayer()
     player.delegate = self
+    failedPlaybackCount = 0
     player.load(media: media, autostart: true)
     self.player = player
     player.player.isMuted = true
     set(state: .loading(player: player.player))
   }
 
-  private func didTapButton() {
+  fileprivate func showFeed(with content: VideoContent?, animated: Bool = false) {
     func configureTransitionAnimation(inView view: UIView = self.view) {
       let transition = CATransition()
       transition.duration = 0.3
@@ -304,13 +308,14 @@ public class AntWidget {
       transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
       view.window?.layer.add(transition, forKey: kCATransition)
     }
+    
     guard let vc = view.findViewController() else {return}
 
     let listController = StreamListController(nibName: "StreamListController", bundle: Bundle(for: type(of: self)))
     listController.dataSource = dataSource
     let navController = NavigationController(rootViewController: listController)
     navController.modalPresentationStyle = .fullScreen
-    if let stream = currentContent {
+    if let stream = content {
       let playerVC = PlayerController(nibName: "PlayerController", bundle: Bundle(for: type(of: self)))
       playerVC.videoContent = stream
       playerVC.dataSource = dataSource
@@ -322,14 +327,18 @@ public class AntWidget {
       let controllerToPresent: UIViewController = currentContent is VOD ? playerNavController : playerVC
       controllerToPresent.modalPresentationStyle = .fullScreen
       vc.present(navController, animated: false, completion: {
+        if animated {
           configureTransitionAnimation(inView: navController.view)
-          navController.present(controllerToPresent, animated: false, completion: {
-            navController.view.isHidden = false
-          })
+        }
+        navController.present(controllerToPresent, animated: false, completion: {
+          navController.view.isHidden = false
+        })
       })
       return
     }
-    configureTransitionAnimation()
+    if animated {
+      configureTransitionAnimation()
+    }
     vc.present(navController, animated: false, completion: nil)
   }
 
@@ -344,7 +353,7 @@ public class AntWidget {
       set(state: .resting)
       return
     }
-    if let stream = dataSource.streams.last {
+    if let stream = dataSource.streams.first {
       if currentContent?.id != stream.id, animationProcessing == false {
         preparedContent = stream
         showLive(with: stream)
@@ -362,11 +371,13 @@ public class AntWidget {
 
   @objc
   func handleViewerDisappear(_ notification: NSNotification) {
+    feedShown = false
     onViewerDisappear?([:])
   }
   
   @objc
   func handleViewerAppear(_ notification: NSNotification) {
+    feedShown = true
     onViewerAppear?([:])
   }
 
@@ -411,7 +422,7 @@ extension AntWidget: WidgetViewDelegate {
 
   func widgetViewDidPressButton(_ widgetView: WidgetView) {
     widgetView.isUserInteractionEnabled = false
-    didTapButton()
+    showFeed(with: currentContent, animated: true)
   }
 
 }
@@ -420,7 +431,16 @@ extension AntWidget: ModernAVPlayerDelegate {
   public func modernAVPlayer(_ player: ModernAVPlayer, didStateChange state: ModernAVPlayer.State) {
     switch state {
     case .failed:
+      failedPlaybackCount += 1
+      if failedPlaybackCount > 2 {
         set(state: .resting)
+      } else {
+        player.play()
+        failedPlaybackDebouncer.call { [weak self] in
+          self?.failedPlaybackCount = 0
+        }
+      }
+        
     default:
       return
     }

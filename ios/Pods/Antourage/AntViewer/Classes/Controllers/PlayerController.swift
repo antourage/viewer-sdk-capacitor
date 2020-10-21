@@ -120,7 +120,8 @@ class PlayerController: UIViewController {
   
   var activeSpendTime: Double = 0 {
     didSet {
-      Statistic.save(action: .close(span: Int(activeSpendTime)), for: videoContent)
+      let type: ContentType = videoContent is VOD ? .VOD : .live
+      Statistic.save(action: .close(span: Int(activeSpendTime)), for: type, contentID: videoContent.id)
     }
   }
   
@@ -388,6 +389,12 @@ class PlayerController: UIViewController {
   private var isChatEnabled = false {
     didSet {
       sendButton.isEnabled = isChatEnabled
+      if !isChatEnabled {
+        if !isKeyboardShown {
+          chatTextViewTrailing.isActive = true
+        }
+        chatTextView.text = ""
+      }
       chatTextView.isEditable = isChatEnabled
 
       chatTextView.placeholder = isChatEnabled ? LocalizedStrings.chat.localized :
@@ -397,9 +404,7 @@ class PlayerController: UIViewController {
       chatTextViewHolderView.layer.borderColor = UIColor.white.withAlphaComponent(alpha).cgColor
       chatTextView.placeholderTextColor = isChatEnabled ? .cellGray : .bottomMessageGray
       view.layoutIfNeeded()
-      if !isChatEnabled {
-        chatTextView.text = ""
-      }
+
     }
   }
   
@@ -543,7 +548,8 @@ class PlayerController: UIViewController {
       guard let `self` = self else { return }
       self.isChatEnabled = false
       try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-      Statistic.send(action: .open, for: self.videoContent)
+      let type: ContentType = self.videoContent is VOD ? .VOD : .live
+      Statistic.send(action: .open, for: type, contentID: self.videoContent.id)
       self.chat = Chat(for: self.videoContent)
       self.startPlayer()
     }
@@ -581,7 +587,8 @@ class PlayerController: UIViewController {
   deinit {
     print("Player DEINITED")
     pollManager?.removeFirObserver()
-    Statistic.send(action: .close(span: Int(activeSpendTime)), for: videoContent)
+    let type: ContentType = self.videoContent is VOD ? .VOD : .live
+    Statistic.send(action: .close(span: Int(activeSpendTime)), for: type, contentID: self.videoContent.id)
     SponsoredBanner.current = nil
   }
 
@@ -899,6 +906,7 @@ class PlayerController: UIViewController {
 
         self.isPlayerControlsHidden = true
         self.liveDurationLabel.text = self.seekLabel.text
+        self.seekLabel.isHidden = true
         self.liveDurationLabel.isHidden = false
         self.videoContainerView.image = newImage
         self.videoContainerView.isUserInteractionEnabled = true
@@ -1236,7 +1244,7 @@ class PlayerController: UIViewController {
       self.controlsDebouncer.call { [weak self] in
         guard let `self` = self else { return }
         if !self.isPaused || !(self.isVideoEnd && self.isAutoplayMode) {
-          if OrientationUtility.isLandscape && self.seekTo != nil {
+          if (OrientationUtility.isLandscape && self.seekTo != nil) || self.isPlayerError {
             return
           }
           self.isPlayerControlsHidden = true
@@ -1272,11 +1280,12 @@ class PlayerController: UIViewController {
         }
       }
       
-      if isPlayerError {
-        if let media = player.currentMedia, let vod = videoContent as? VOD {
+      if isPlayerError, let media = player.currentMedia {
+        if let vod = videoContent as? VOD {
           player.load(media: media, autostart: true, position: Double(vod.stopTime.duration()))
         } else {
-          player.play()
+          let position = seekLabel.text?.duration()
+          player.load(media: media, autostart: true, position: Double(position ?? 0))
         }
       } else {
         player.play()
@@ -1594,7 +1603,7 @@ extension PlayerController: ModernAVPlayerDelegate {
   func modernAVPlayer(_ player: ModernAVPlayer, didStateChange state: ModernAVPlayer.State) {
     DispatchQueue.main.async { [weak self] in
       guard let `self` = self else { return }
-      print("Player state: \(state)")
+      print("Player state: \(Date().debugDescription) \(state)")
       switch state {
         case .failed:
           self.isPlayerControlsHidden = false
@@ -1673,6 +1682,7 @@ extension PlayerController: ModernAVPlayerDelegate {
         }
         
         vod.stopTime = min(Int(currentTime), vod.duration.duration()).durationString()
+        
         let chatTime = self.isVideoEnd ? vod.duration.duration() + 100500 : Int(currentTime)
         self.chatController.handleVODsChat(forTime: chatTime)
         if !self.isVideoEnd {

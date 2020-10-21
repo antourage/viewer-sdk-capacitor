@@ -130,12 +130,21 @@ final class PlayingState: PlayerState {
         guard let media = context.currentMedia
             else { assertionFailure("media should exist"); return }
 
-        itemPlaybackObservingService.onPlaybackStalled = { [weak self] in
-          print("Player state: onPlaybackStalled")
-            self?.redirectToWaitingForNetworkState()
+        itemPlaybackObservingService.onPlaybackStalled = { [weak self] withError in
+          print("Player state: \(Date().debugDescription) onPlaybackStalled")
+          if withError {
+            self?.context.player.pause()
+            self?.redirectToFailedState()
+          } else {
+            guard let context = self?.context else { return }
+            context.player.play()
+            let state = BufferingState(context: context)
+            self?.changeState(state: state)
+            state.playCommand()
+          }
         }
         itemPlaybackObservingService.onFailedToPlayToEndTime = { [weak self] in
-          print("Player state: onFailedToPlayToEndTime")
+          print("Player state: \(Date().debugDescription) onFailedToPlayToEndTime")
           self?.redirectToWaitingForNetworkState()
         }
         itemPlaybackObservingService.onPlayToEndTime = { [weak self] in
@@ -155,6 +164,12 @@ final class PlayingState: PlayerState {
     private func redirectToWaitingForNetworkState() {
         startBgTask()
         let state = WaitingNetworkState(context: context, autostart: true, error: .playbackStalled)
+        changeState(state: state)
+    }
+  
+    private func redirectToFailedState() {
+        startBgTask()
+        let state = FailedState(context: context, error: .playbackStalled)
         changeState(state: state)
     }
     

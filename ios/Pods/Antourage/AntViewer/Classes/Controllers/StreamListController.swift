@@ -11,7 +11,7 @@ import AntViewerExt
 
 private let reuseIdentifier = "StreamCell"
 
-class StreamListController: UIViewController {
+class StreamListController: UIViewController, HostChangeable {
 
   @IBOutlet private var headerView: UIView!
   @IBOutlet var collectionView: UICollectionView!
@@ -23,8 +23,9 @@ class StreamListController: UIViewController {
 
 
   fileprivate lazy var newLivesButton: UIButton = {
-    let button = UIButton()
+    let button = ButtonWithTouchSize()
     button.layer.cornerRadius = 10
+    button.touchAreaPadding = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     button.clipsToBounds = true
     button.backgroundColor = UIColor.color("a_button_blue")
     button.setImage(UIImage.image("ArrowSmallTop"), for: .normal)
@@ -34,6 +35,7 @@ class StreamListController: UIViewController {
     button.semanticContentAttribute = .forceRightToLeft
     button.contentHorizontalAlignment = .center
     button.contentEdgeInsets.left = 3
+    button.isHidden = true
     view.addSubview(button)
     button.addTarget(self, action: #selector(scrollToTop), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -263,7 +265,10 @@ class StreamListController: UIViewController {
     skeleton?.didChangeReachability(isReachable)
   }
 
-
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    Statistic.sync()
+  }
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
@@ -369,35 +374,42 @@ class StreamListController: UIViewController {
     guard var visibleIndexPath = getTopVisibleRow(),
       var differenceBetweenRowAndNavBar = heightDifferenceBetweenTopRowAndNavBar() else {
         reachedListsEnd = false
-      // MARK: merge to 1 line
-        if skeleton == nil {
-          if self.view.window != nil {
-            self.activeCell = self.getTopVisibleCell()
-          }
+        if skeleton == nil, self.view.window != nil {
+          self.activeCell = self.getTopVisibleCell()
         }
         return
     }
 
     var shouldScroll = true
     let streamsCount = dataSource.streams.count
+    let streamItemsCount = collectionView.numberOfItems(inSection: 0)
+    let isTop = collectionView.contentOffset.y < 10
+    
+    
+    
     if visibleIndexPath.section == 0 {
-      let itemsCount = collectionView.numberOfItems(inSection: 0)
       if streamsCount == 0 {
         shouldScroll = dataSource.videos.count > 0
         differenceBetweenRowAndNavBar = 0
         visibleIndexPath = IndexPath(item: 0, section: 1)
       } else {
-        let difference = streamsCount - itemsCount
+        let difference = streamsCount - streamItemsCount
+        ///
         let newItem = max(visibleIndexPath.item + difference, 0)
         visibleIndexPath.item = newItem
       }
     }
 
-      let deletedPaths = deletedIndexes.map { IndexPath(item: $0, section: 0) }
+    let deletedPaths = deletedIndexes.compactMap { $0 < streamItemsCount ? IndexPath(item: $0, section: 0) : nil }
       var addedPaths = [IndexPath]()
       for index in 0 ..< addedCount {
         addedPaths.append(IndexPath(item: index, section: 0))
       }
+    
+    if isTop, addedCount > 0 {
+      differenceBetweenRowAndNavBar = 0
+      visibleIndexPath = IndexPath(item: 0, section: 0)
+    }
     CATransaction.begin()
     CATransaction.setDisableActions(true)
       collectionView.performBatchUpdates({
@@ -406,7 +418,7 @@ class StreamListController: UIViewController {
       }, completion: { _ in
         self.collectionView.collectionViewLayout.invalidateLayout()
         self.updateVisibleCells()
-        if addedCount > 0, self.newLivesButton.isHidden {
+        if addedCount > 0, self.newLivesButton.isHidden, !isTop {
           let shouldShow = visibleIndexPath.section == 1 || visibleIndexPath.item > 0
           self.newLivesButton.isHidden = !shouldShow
         } else if streamsCount == 0 {
@@ -497,8 +509,11 @@ class StreamListController: UIViewController {
   @IBAction
   private func changeHost(_ sender: UITapGestureRecognizer) {
     let version = Bundle(identifier: "org.cocoapods.AntWidget")?.infoDictionary?["CFBundleShortVersionString"] as? String
-    presentChangeHostAlert(with: version)
-    
+    tagLineLabel.text = version
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+      self.tagLineLabel.text = HeaderInfoModel.currentInfo?.tagLine
+    }
+    presentChangeHostAlert()
   }
   
   @IBAction
@@ -567,7 +582,7 @@ class StreamListController: UIViewController {
   
   fileprivate func getItemWith(indexPath: IndexPath) -> VideoContent? {
     guard isItemExist(at: indexPath) else { return nil }
-    return indexPath.section == 0 ? dataSource.streams.reversed()[indexPath.row] : dataSource.videos[indexPath.row]
+    return indexPath.section == 0 ? dataSource.streams[indexPath.row] : dataSource.videos[indexPath.row]
   }
 
   fileprivate func getTopVisibleRow () -> IndexPath? {
@@ -808,7 +823,11 @@ extension StreamListController: ModernAVPlayerDelegate {
   public func modernAVPlayer(_ player: ModernAVPlayer, didStateChange state: ModernAVPlayer.State) {
     switch state {
     case .failed:
-      activeCell = nil
+      if getActiveItem is Live, let media = player.currentMedia, let time = activeCell?.duration {
+        player.load(media: media, autostart: true, position: Double(time))
+      } else {
+        activeCell = nil
+      }
     case .loaded:
       UIView.animate(withDuration: 0.3, animations: {
         self.curtainThumbnail.alpha = 0
@@ -836,9 +855,8 @@ extension StreamListController: ModernAVPlayerDelegate {
         self?.activeCell?.duration = item.duration.duration()
         self?.activeCell?.watchedTime = Int(currentTime)
         item.stopTime = min(Int(currentTime), item.duration.duration()).durationString()
-      } else if let item = self?.getActiveItem as? Live {
-        let duration = Date().timeIntervalSince(item.date)
-        self?.activeCell?.duration = Int(duration)
+      } else {
+        self?.activeCell?.duration = Int(currentTime)
         if self?.activeCell?.timeImageView.isAnimating == false {
           self?.activeCell?.timeImageView.startAnimating()
         }
