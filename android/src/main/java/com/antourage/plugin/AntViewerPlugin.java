@@ -85,6 +85,7 @@ public class AntViewerPlugin extends Plugin {
     @PluginMethod()
     public void showFeedScreen(PluginCall call) {
         Intent intent = new Intent(getContext(), AntourageActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         getActivity().startActivity(intent);
     }
 
