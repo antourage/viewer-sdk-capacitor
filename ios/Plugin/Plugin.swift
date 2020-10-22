@@ -107,8 +107,7 @@ public class AntViewerPlugin: CAPPlugin {
   @objc
   func showFeedScreen(_ call: CAPPluginCall) {
     DispatchQueue.main.async {
-      let feed = self.widget.getListController()
-      self.bridge.viewController.present(feed, animated: true, completion: nil)
+      self.widget.showFeed()
     }
   }
   

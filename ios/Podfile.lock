@@ -212,7 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - Antourage (2.0.23):
+  - Antourage (2.0.25):
     - Firebase/Auth
     - Firebase/Firestore
   - BoringSSL-GRPC (0.0.7):
@@ -309,7 +309,7 @@ PODS:
   - PromisesObjC (1.2.11)
 
 DEPENDENCIES:
-  - Antourage (~> 2.0.23)
+  - Antourage (~> 2.0.25)
   - "Capacitor (from `../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../node_modules/@capacitor/ios`)"
 
@@ -340,7 +340,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
-  Antourage: fc3b5f6982fb86845c9c7a57febcb9d1ff1809dd
+  Antourage: df9753154beac281b1134f5d3e9e38725d509fd4
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Capacitor: 12f6492ebd90494ff60f37b57718f5f1b5d841eb
   CapacitorCordova: bf294ab653635d3aa5d7ec1512753f01df7b7149
@@ -358,6 +358,6 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: fb0cc51bda11a9cb8eb6091f31b458495128eab9
+PODFILE CHECKSUM: b20ef0c9fba639d0f5333f7d3bb23abcd67a99d5
 
 COCOAPODS: 1.9.3

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.antourage:AntViewer-android:2.0.24@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c305f2b9f5dbe0040bb95bc5c1609e2/jetified-AntViewer-android-2.0.24/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c305f2b9f5dbe0040bb95bc5c1609e2/jetified-AntViewer-android-2.0.24/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.antourage/AntViewer-android/2.0.24/f70b3edc511f898015ca6ddf402b2cdfc3e4f495/AntViewer-android-2.0.24-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
