@@ -112,6 +112,13 @@ public class AntViewerPlugin: CAPPlugin {
   }
   
   @objc
-  func setLocale(_ call: CAPPluginCall) {} // Android only
+  func setLocale(_ call: CAPPluginCall) {
+    guard let locale = call.getString("locale") else {
+      return call.reject("Must provide a locale")
+    }
+    DispatchQueue.main.async {
+      self.widget.widgetLocale = WidgetLocale(rawValue: locale)
+    }
+  }
   
 }

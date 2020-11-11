@@ -257,7 +257,7 @@ const { AntViewerPlugin } = Plugins;
 AntViewerPlugin.lockCapacitorControllerToPortrait();
 ```
 
-### Localization (Android only)
+### Localization
 
 By default android widget will use device's language: Swedish if it is chosen as device’s default language and English in other cases. But if you want to force app to use language that differs from device’s one - you can use method `setLocale(lang: String)`. Currently widget supports only English("en") and Swedish("sv").
 
