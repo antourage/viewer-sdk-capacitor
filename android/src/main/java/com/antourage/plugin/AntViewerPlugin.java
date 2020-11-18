@@ -2,13 +2,11 @@ package com.antourage.plugin;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.ViewGroup;
 
 import com.antourage.weaverlib.screens.base.AntourageActivity;
 import com.antourage.weaverlib.ui.fab.AntourageFab;
 import com.antourage.weaverlib.ui.fab.RegisterPushNotificationsResult;
-import com.antourage.weaverlib.ui.fab.UserAuthResult;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
@@ -31,15 +29,12 @@ public class AntViewerPlugin extends Plugin {
         String refUserId = call.getString("refUserId");
         String nickname = call.getString("nickname");
 
-        this.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (antFab == null) {
-                    antFab = new AntourageFab(getActivity());
-                }
-                antFab.authWith(apiKey, refUserId, nickname);
-                call.resolve();
+        this.getActivity().runOnUiThread(() -> {
+            if (antFab == null) {
+                antFab = new AntourageFab(getActivity());
             }
+            AntourageFab.Companion.authWith(apiKey, refUserId, nickname, getActivity());
+            call.resolve();
         });
     }
 
@@ -54,11 +49,8 @@ public class AntViewerPlugin extends Plugin {
             call.reject("Must provide valid position");
             return;
         }
-        this.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                antFab.setPosition(position);
-            }
+        this.getActivity().runOnUiThread(() -> {
+            if (antFab != null) antFab.setPosition(position);
         });
     }
 
@@ -69,11 +61,8 @@ public class AntViewerPlugin extends Plugin {
         if (call.getString("platform") == "ios" || horizontal == null || vertical == null) {
             return;
         }
-        this.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                antFab.setMargins(horizontal, vertical);
-            }
+        this.getActivity().runOnUiThread(() -> {
+            if (antFab != null) antFab.setMargins(horizontal, vertical);
         });
 
     }
@@ -117,7 +106,6 @@ public class AntViewerPlugin extends Plugin {
             @Override
             public void run() {
                 Activity activity = getActivity();
-
                 if (antFab == null) {
                     antFab = new AntourageFab(activity);
                 }

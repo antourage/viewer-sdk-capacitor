@@ -27,9 +27,9 @@ const render = () => {
     //window.screen.orientation.lock('portrait');
   });
 
-  AntViewerPlugin.setPosition({ position: "bottomLeft" });
+  AntViewerPlugin.setPosition({ position: "bottomRight" });
   AntViewerPlugin.setLocale({ locale: "en" });
-  AntViewerPlugin.setMargins({ horizontal: 0, vertical: 50 });
+  AntViewerPlugin.setMargins({ horizontal: 10, vertical: 80 });
   // AntViewerPlugin.lockCapacitorControllerToPortrait();
 
   ReactDOM.render(<App />, document.getElementById("root"));
