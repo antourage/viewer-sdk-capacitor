@@ -212,7 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - Antourage (2.0.26):
+  - Antourage (2.0.27):
     - Firebase/Auth
     - Firebase/Firestore
   - BoringSSL-GRPC (0.0.7):
@@ -221,9 +221,9 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
-  - Capacitor (2.4.1):
+  - Capacitor (2.4.0):
     - CapacitorCordova
-  - CapacitorCordova (2.4.1)
+  - CapacitorCordova (2.4.0)
   - Firebase/Auth (7.1.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 7.1.0)
@@ -340,10 +340,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
-  Antourage: d4d076c37a937c1f3b18dc5908682d199f5812bd
+  Antourage: 9073b5a4e955a447e9d201ebc5099c65b75c8339
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
-  Capacitor: 12f6492ebd90494ff60f37b57718f5f1b5d841eb
-  CapacitorCordova: bf294ab653635d3aa5d7ec1512753f01df7b7149
+  Capacitor: 0bc38985fc7744924a8e1d72a53b11e93f53adb5
+  CapacitorCordova: ffb86bd6630220cf94a63306a72f13c653fb43aa
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
   FirebaseAuth: f82c2cfcc1c107bb0a97735cdbce4eb2a601f710
   FirebaseCore: 20046127eef0fcb8fa25df7fc12f7b97d4e48611
