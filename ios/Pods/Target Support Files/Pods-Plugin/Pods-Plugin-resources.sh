@@ -111,7 +111,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/SkeletonCell.nib"
   install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/SponsoredBannerCell.nib"
   install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/StreamCell.nib"
-  install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/AntViewerModel.momd"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Antourage/AntWidget.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -129,7 +128,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/SkeletonCell.nib"
   install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/SponsoredBannerCell.nib"
   install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/StreamCell.nib"
-  install_resource "${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/AntViewerModel.momd"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Antourage/AntWidget.bundle"
 fi
 

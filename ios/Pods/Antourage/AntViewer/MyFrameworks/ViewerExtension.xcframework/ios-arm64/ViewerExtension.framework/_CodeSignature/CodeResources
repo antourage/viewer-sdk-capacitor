@@ -4,9 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AntViewerModel.momd/AntViewerModel.mom</key>
+		<data>
+		jKVcAFmgKP9mVDpN/8iR0SVXyno=
+		</data>
+		<key>AntViewerModel.momd/VersionInfo.plist</key>
+		<data>
+		45gg9uf1v15yw34BYFnA3WX+AaM=
+		</data>
 		<key>Headers/ViewerExtension-Swift.h</key>
 		<data>
-		4z5SzOgOOVlbN72d9LzPtKSUDMo=
+		A3FDXFr49SjMKvyXwaIKdPTU/us=
 		</data>
 		<key>Headers/ViewerExtension.h</key>
 		<data>
@@ -14,44 +22,62 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		x8B6mjuxdn4pXcwihZv/t9GpH3g=
+		XnJgwjP2hxofqT0jIYgixncVK7M=
 		</data>
 		<key>Modules/ViewerExtension.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		Xvdc6ai64x2WbBUomSjUeFSpsyI=
+		qpwWZm+WqpzX8TvQUWSdipxtZjU=
 		</data>
 		<key>Modules/ViewerExtension.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		hSw72eBtc4CWMCqygZ0FReEh0I4=
+		Qy8BBYySKFc/y+tNHjPw/cUVD9c=
 		</data>
 		<key>Modules/ViewerExtension.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		3J5qApThejuDFOekW/qSTXoTor0=
+		aOxt2pVGaCdNmxOVIic256K+OYs=
 		</data>
 		<key>Modules/ViewerExtension.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Xvdc6ai64x2WbBUomSjUeFSpsyI=
+		qpwWZm+WqpzX8TvQUWSdipxtZjU=
 		</data>
 		<key>Modules/ViewerExtension.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		hSw72eBtc4CWMCqygZ0FReEh0I4=
+		Qy8BBYySKFc/y+tNHjPw/cUVD9c=
 		</data>
 		<key>Modules/ViewerExtension.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		3J5qApThejuDFOekW/qSTXoTor0=
+		aOxt2pVGaCdNmxOVIic256K+OYs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		o8/oIy0XpuiTsfa71EV2rHKRH8A=
 		</data>
+		<key>ViewerExtension.podspec</key>
+		<data>
+		lSxPXeeqV9lCIHZCeI65W1WPemg=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AntViewerModel.momd/AntViewerModel.mom</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wMN8KyFueiBk5XB9tErpHDm5LqwCA3Bqf9a4IvHgZRI=
+			</data>
+		</dict>
+		<key>AntViewerModel.momd/VersionInfo.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			W6DC5k00hQUCz6U+yVwm4ZTAI4pvHen8lNrHVVBKpKc=
+			</data>
+		</dict>
 		<key>Headers/ViewerExtension-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SoJNGiJSXK7MG1gSuDauSQL3B7maz/FNsLwMaajB0bs=
+			rdNqmzXhJ6l5X6YXm4jgfcxTCFHtg6AV5GrJxgtsco0=
 			</data>
 		</dict>
 		<key>Headers/ViewerExtension.h</key>
@@ -65,42 +91,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SbA5Kw3IncG3Wec5t2NGkEBBabsQZQaHYSCOKxkgD6M=
+			lXmglenM0y4fJqwT2zP4K7chzNKZ/hK2Uk26wy140pU=
 			</data>
 		</dict>
 		<key>Modules/ViewerExtension.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x7XdyLUUFqDKn3RxBRl0ZA9LW9r0L4xQ3mRSXdnk23o=
+			QaAeLOj60Lt0OKlr+xTaKL4PpyhLaXDnyne/Xvvujks=
 			</data>
 		</dict>
 		<key>Modules/ViewerExtension.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NNyMixXckykJ+Jmtt9sSZdwa+SPGggQE5SOSPNlXYVs=
+			25n7Fkb30IfVywA7JTYoPdXFPbdJxCFgzRC63vKNWD4=
 			</data>
 		</dict>
 		<key>Modules/ViewerExtension.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SbA5Kw3IncG3Wec5t2NGkEBBabsQZQaHYSCOKxkgD6M=
+			lXmglenM0y4fJqwT2zP4K7chzNKZ/hK2Uk26wy140pU=
 			</data>
 		</dict>
 		<key>Modules/ViewerExtension.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x7XdyLUUFqDKn3RxBRl0ZA9LW9r0L4xQ3mRSXdnk23o=
+			QaAeLOj60Lt0OKlr+xTaKL4PpyhLaXDnyne/Xvvujks=
 			</data>
 		</dict>
 		<key>Modules/ViewerExtension.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NNyMixXckykJ+Jmtt9sSZdwa+SPGggQE5SOSPNlXYVs=
+			25n7Fkb30IfVywA7JTYoPdXFPbdJxCFgzRC63vKNWD4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -108,6 +134,13 @@
 			<key>hash2</key>
 			<data>
 			VhbaWiNG26gbQu+DyBIH7fF/gOFHsdOeT5shYbOmyYY=
+			</data>
+		</dict>
+		<key>ViewerExtension.podspec</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qux/FSrw8+VMQToDlljLB0P4A6VhcfxlrxLWfXNRQVU=
 			</data>
 		</dict>
 	</dict>

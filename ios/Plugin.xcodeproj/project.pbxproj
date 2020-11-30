@@ -345,7 +345,6 @@
 				"${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/SkeletonCell.nib",
 				"${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/SponsoredBannerCell.nib",
 				"${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/StreamCell.nib",
-				"${BUILT_PRODUCTS_DIR}/Antourage/Antourage.framework/AntViewerModel.momd",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Antourage/AntWidget.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -364,7 +363,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SkeletonCell.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SponsoredBannerCell.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StreamCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntViewerModel.momd",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntWidget.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

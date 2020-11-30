@@ -306,7 +306,7 @@ public class AntWidget: NSObject {
   private func showLive(with content: Live) {
     guard let url = URL(string: content.url) else { return }
     let media = ModernAVPlayerMedia(url: url, type: .stream(isLive: true))
-    let player = ModernAVPlayer()
+    let player = ModernAVPlayer(config: AntourageAVPlayerConfiguration())
     player.delegate = self
     failedPlaybackCount = 0
     player.load(media: media, autostart: true)
@@ -336,11 +336,7 @@ public class AntWidget: NSObject {
       playerVC.videoContent = stream
       playerVC.dataSource = dataSource
       navController.view.isHidden = true
-      var playerNavController: PlayerNavigationController!
-      if currentContent is VOD {
-        playerNavController = PlayerNavigationController(rootViewController: playerVC)
-      }
-      let controllerToPresent: UIViewController = currentContent is VOD ? playerNavController : playerVC
+      let controllerToPresent: UIViewController = currentContent is VOD ? PlayerNavigationController(rootViewController: playerVC) : playerVC
       controllerToPresent.modalPresentationStyle = .fullScreen
       vc.present(navController, animated: false, completion: {
         if animated {

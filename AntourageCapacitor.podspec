@@ -12,5 +12,5 @@
     s.platform     = :ios, "11.3"
     s.static_framework = true
     s.dependency 'Capacitor'
-    s.dependency 'Antourage', '2.0.26'
+    s.dependency 'Antourage', '~> 2.0.28'
   end

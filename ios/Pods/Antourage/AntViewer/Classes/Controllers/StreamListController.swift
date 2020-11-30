@@ -102,12 +102,12 @@ class StreamListController: UIViewController, HostChangeable {
   fileprivate var currentActiveItem: VideoContent?
 
   fileprivate lazy var player: ModernAVPlayer = {
-    let player = ModernAVPlayer()
+    let player = ModernAVPlayer(config: AntourageAVPlayerConfiguration())
     player.player.isMuted = true
     player.delegate = self
     return player
   }()
-  fileprivate let initialVodDebouncer = Debouncer(delay: 1)
+  fileprivate let initialVodDebouncer = Debouncer(delay: 0.7)
   fileprivate let playerDebouncer = Debouncer(delay: 0.5)
   fileprivate var isLoading = false {
     didSet {
