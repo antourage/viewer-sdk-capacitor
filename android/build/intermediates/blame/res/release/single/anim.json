@@ -1,0 +1,198 @@
+[
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_exit_to_left.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_exit_to_left.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/fragment_close_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/10610501b0e6b5daf0cee2aa206373c5/fragment-1.2.4/res/anim/fragment_close_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/design_snackbar_in.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/6dc9bf7cea441b16f699f4451b8593d7/material-1.2.1/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_slide_down.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_slide_down.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_checkbox_to_unchecked_box_inner_merged_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_checkbox_to_unchecked_box_inner_merged_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_checkbox_to_checked_icon_null_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_checkbox_to_checked_icon_null_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_enter_from_left.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_enter_from_left.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_checkbox_to_checked_box_inner_merged_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_checkbox_to_checked_box_inner_merged_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_radio_to_on_mtrl_dot_group_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_radio_to_on_mtrl_dot_group_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_tooltip_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_radio_to_on_mtrl_ring_outer_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_radio_to_on_mtrl_ring_outer_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/design_snackbar_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/6dc9bf7cea441b16f699f4451b8593d7/material-1.2.1/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_enter_from_right.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_enter_from_right.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_tooltip_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_tooltip_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_fade_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_fade_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/slide_up_fade_in.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/slide_up_fade_in.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_radio_to_on_mtrl_ring_outer_path_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_radio_to_on_mtrl_ring_outer_path_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_checkbox_to_checked_box_outer_merged_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_checkbox_to_checked_box_outer_merged_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_slide_up.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_slide_up.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/fragment_open_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/10610501b0e6b5daf0cee2aa206373c5/fragment-1.2.4/res/anim/fragment_open_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/fragment_open_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/10610501b0e6b5daf0cee2aa206373c5/fragment-1.2.4/res/anim/fragment_open_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/fragment_fade_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/10610501b0e6b5daf0cee2aa206373c5/fragment-1.2.4/res/anim/fragment_fade_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/slide_up_fade_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/slide_up_fade_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/fragment_close_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/10610501b0e6b5daf0cee2aa206373c5/fragment-1.2.4/res/anim/fragment_close_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_checkbox_to_unchecked_icon_null_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_checkbox_to_unchecked_icon_null_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/fragment_fade_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/10610501b0e6b5daf0cee2aa206373c5/fragment-1.2.4/res/anim/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_radio_to_off_mtrl_dot_group_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_radio_to_off_mtrl_dot_group_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_replace_fade_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_replace_fade_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/mtrl_card_lowers_interpolator.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/6dc9bf7cea441b16f699f4451b8593d7/material-1.2.1/res/anim/mtrl_card_lowers_interpolator.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_radio_to_off_mtrl_ring_outer_path_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_radio_to_off_mtrl_ring_outer_path_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/catalyst_push_up_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/80db5f33dbf4f241b07dbfe0c5592075/jetified-react-native-0.20.1/res/anim/catalyst_push_up_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/catalyst_push_up_in.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/80db5f33dbf4f241b07dbfe0c5592075/jetified-react-native-0.20.1/res/anim/catalyst_push_up_in.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_checkbox_to_unchecked_check_path_merged_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_checkbox_to_unchecked_check_path_merged_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/btn_radio_to_off_mtrl_ring_outer_animation.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/btn_radio_to_off_mtrl_ring_outer_animation.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_exit_to_right.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_exit_to_right.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/2b7334032ee67b1756dbb39e98e0088e/appcompat-1.2.0/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_rotate_anim.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_rotate_anim.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/slide_down_fade_out.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/slide_down_fade_out.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/slide_down_fade_in.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/slide_down_fade_in.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/anim/antourage_fade_in.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/54bddd7fdb3fdd667dac53033e5f10c6/jetified-AntViewer-android-2.0.27.1/res/anim/antourage_fade_in.xml"
+    }
+]

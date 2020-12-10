@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_previous.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_previous.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_repeat_off.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_repeat_off.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_pause.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_pause.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_default_album_image.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_default_album_image.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_repeat_all.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_repeat_all.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_chevron_right.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_chevron_right.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_shuffle_off.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_shuffle_off.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_next.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_next.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_forward.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_forward.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_play_circle_filled.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_play_circle_filled.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_audiotrack.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_audiotrack.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_chevron_left.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_chevron_left.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_shuffle_on.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_shuffle_on.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_skip_next.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_skip_next.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_stop.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_stop.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_rewind.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_rewind.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_pause_circle_filled.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_pause_circle_filled.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_subtitle_off.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_subtitle_off.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_fullscreen_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_fullscreen_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_skip_previous.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_skip_previous.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_subtitle_on.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_subtitle_on.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_fullscreen_enter.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_fullscreen_enter.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_fullscreen_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_fullscreen_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_rewind.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_rewind.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_repeat_one.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_repeat_one.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_edit_mode_logo.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_edit_mode_logo.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_speed.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_speed.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_settings.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_settings.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_fastforward.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_fastforward.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_check.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_check.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_ic_fullscreen_exit.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_ic_fullscreen_exit.xml"
+    },
+    {
+        "merged": "/Users/nazar_mykhailevych/AndroidStudioProjects/AntViewer_capacitor/example/node_modules/antourage_capacitor/android/build/intermediates/res/merged/release/drawable-anydpi-v21/exo_icon_play.xml",
+        "source": "/usr/local/Cellar/gradle/6.6/libexec/caches/transforms-2/files-2.1/28def8b370a298e001761573716dd298/jetified-exoplayer-ui-2.12.0/res/drawable-anydpi-v21/exo_icon_play.xml"
+    }
+]
