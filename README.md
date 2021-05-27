@@ -1,9 +1,4 @@
 # Antourage Viewer SDK
-
-[![Version](https://img.shields.io/cocoapods/v/Antourage.svg?style=flat)](https://cocoapods.org/pods/Antourage)
-[![License](https://img.shields.io/cocoapods/l/Antourage.svg?style=flat)](https://cocoapods.org/pods/Antourage)
-[![Platform](https://img.shields.io/cocoapods/p/Antourage.svg?style=flat)](https://cocoapods.org/pods/Antourage)
-
 ### Please visit [Antourage Documentation](https://antourage.github.io) for more information.
 
 ## License
