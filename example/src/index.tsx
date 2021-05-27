@@ -6,7 +6,7 @@ import { Plugins } from "@capacitor/core";
 const { AntViewerPlugin } = Plugins;
 
 const render = () => {
-  AntViewerPlugin.configure()
+  AntViewerPlugin.configure();
 
   AntViewerPlugin.addListener("onViewerAppear", (info: any) => {
     console.log("ios viewer did appear");

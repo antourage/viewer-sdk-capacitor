@@ -10,10 +10,7 @@
     }
   },
   "cordova": {},
-  "server": {
-    "url": "http://192.168.88.15:8100",
-    "cleartext": true,
-    "originalUrl": "http://192.168.0.103:8100",
-    "originalCleartext": true
+  "ios": {
+    "minVersion": "11.3"
   }
 }
