@@ -1,16 +1,19 @@
+require 'json'
 
-  Pod::Spec.new do |s|
-    s.name = 'AntourageCapacitor'
-    s.version = '0.0.5'
-    s.summary = 'Antourage widget plugin'
-    s.license = 'MIT'
-    s.homepage = 'https://github.com/antourage/AntViewer_capacitor.git'
-    s.author = 'mv@leobit.com'
-    s.source = { :git => 'https://github.com/antourage/AntViewer_capacitor.git', :tag => s.version.to_s }
-    s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
-    s.ios.deployment_target  = '11.3'
-    s.platform     = :ios, "11.3"
-    s.static_framework = true
-    s.dependency 'Capacitor'
-    s.dependency 'Antourage', '~> 2.0.28'
-  end
+package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
+
+Pod::Spec.new do |s|
+  s.name = 'AntourageCapacitor'
+  s.version = package['version']
+  s.summary = package['description']
+  s.license = package['license']
+  s.homepage = package['repository']['url']
+  s.author = package['author']
+  s.source = { :git => package['repository']['url'], :tag => s.version.to_s }
+  s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
+  s.ios.deployment_target  = '11.3'
+  s.platform     = :ios, "11.3"
+  s.static_framework = true
+  s.dependency 'Capacitor'
+  s.dependency 'Antourage'
+end

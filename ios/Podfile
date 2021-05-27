@@ -5,11 +5,11 @@ def capacitor_pods
   use_frameworks!
   pod 'Capacitor', :path => '../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../node_modules/@capacitor/ios'
+  pod 'Antourage', :git => 'https://github.com/antourage/viewer-sdk-ios', :tag => 'v3.0.0-beta.2'
 end
 
 target 'Plugin' do
   capacitor_pods
-	pod 'Antourage', '~> 2.0.28'
 end
 
 target 'PluginTests' do

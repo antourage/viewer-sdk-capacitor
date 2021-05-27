@@ -1,6 +1,7 @@
 import Foundation
 import Capacitor
 import Antourage
+import AntourageViewer
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -8,8 +9,7 @@ import Antourage
  */
 @objc(AntViewerPlugin)
 public class AntViewerPlugin: CAPPlugin {
-  
-  lazy private var widget = AntWidget.shared
+  lazy private var widget = Antourage.shared
   
   public override func load() {
     super.load()
@@ -68,24 +68,15 @@ public class AntViewerPlugin: CAPPlugin {
       let vertical = call.getFloat("vertical") else {
       return 
     }
-    let margins = WidgetMargins(vertical: CGFloat(vertical), horizontal: CGFloat(horizontal))
+    let margins = UIOffset(horizontal: CGFloat(horizontal), vertical: CGFloat(vertical))
     DispatchQueue.main.async {
       self.widget.widgetMargins = margins
     }
   }
   
   @objc
-  func auth(_ call: CAPPluginCall) {
-    guard let apiKey = call.getString("apiKey") else {
-      return call.reject("Must provide an apiKey")
-    }
-    let refUserId = call.getString("refUserId")
-    let nickname = call.getString("nickname")
-    AntWidget.authWith(
-      apiKey: apiKey,
-      refUserId: refUserId,
-      nickname: nickname)
-    call.resolve()
+  func configure(_ call: CAPPluginCall) {
+    Antourage.configure()
   }
   
   @objc
@@ -94,7 +85,7 @@ public class AntViewerPlugin: CAPPlugin {
       return call.reject("Must provide an fcmToken")
     }
     
-    AntWidget.registerNotifications(FCMToken: fcmToken) { result in
+    Antourage.registerNotifications(fcmToken: fcmToken) { result in
       switch result {
       case .success(let topic):
         call.resolve(["topic": topic])
@@ -120,5 +111,4 @@ public class AntViewerPlugin: CAPPlugin {
       self.widget.widgetLocale = WidgetLocale(rawValue: locale)
     }
   }
-  
 }

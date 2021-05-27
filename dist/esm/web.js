@@ -6,7 +6,7 @@ export class AntViewerPluginWeb extends WebPlugin {
             platforms: ['web']
         });
     }
-    auth(_options) {
+    configure() {
         throw new Error("Method not implemented.");
     }
     registerNotifications(_options) {

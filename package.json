@@ -1,7 +1,7 @@
 {
-  "name": "antourage_capacitor",
-  "version": "1.0.17",
-  "description": "Antourage widget plugin",
+  "name": "antourage-capacitor",
+  "version": "2.0.0",
+  "description": "Antourage Capacitor Plugin for Android and iOS",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "author": "mv@leobit.com",
+  "author": "Antourage AB",
   "license": "MIT",
   "dependencies": {
     "@capacitor/core": "^2.4.1"
@@ -42,9 +42,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/antourage/AntViewer_capacitor.git"
+    "url": "https://github.com/antourage/viewer-sdk-capacitor.git"
   },
   "bugs": {
-    "url": "https://github.com/antourage/AntViewer_capacitor.git/issues"
+    "url": "https://github.com/antourage/viewer-sdk-capacitor/issues"
   }
 }

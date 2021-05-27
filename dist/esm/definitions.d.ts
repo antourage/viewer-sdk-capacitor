@@ -4,11 +4,7 @@ declare module "@capacitor/core" {
     }
 }
 export interface AntViewerPluginPlugin {
-    auth(options: {
-        apiKey: string;
-        refUserId: string;
-        nickname: string;
-    }): Promise<void>;
+    configure(): Promise<void>;
     setPosition(options: {
         platform: string;
         position: string;

@@ -8,7 +8,7 @@ export class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlug
       platforms: ['web']
     });
   }
-  auth(_options: { apiKey: string; refUserId: string; nickname: string; }): Promise<void> {
+  configure(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   registerNotifications(_options: { fcmToken: string; }): Promise<{ topic: string; }> {

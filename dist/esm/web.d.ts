@@ -2,11 +2,7 @@ import { WebPlugin } from '@capacitor/core';
 import { AntViewerPluginPlugin } from './definitions';
 export declare class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlugin {
     constructor();
-    auth(_options: {
-        apiKey: string;
-        refUserId: string;
-        nickname: string;
-    }): Promise<void>;
+    configure(): Promise<void>;
     registerNotifications(_options: {
         fcmToken: string;
     }): Promise<{

@@ -1,0 +1,11 @@
+framework module AntourageViewer {
+  umbrella header "AntourageViewer.h"
+
+  export *
+  module * { export * }
+}
+
+module AntourageViewer.Swift {
+    header "AntourageViewer-Swift.h"
+    requires objc
+}
