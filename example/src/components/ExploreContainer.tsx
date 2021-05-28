@@ -7,7 +7,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
   return (
     <div className="container">
       <strong>Test</strong>
-      <p>Lol <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
     </div>
   );
 };

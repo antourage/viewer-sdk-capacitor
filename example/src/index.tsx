@@ -3,25 +3,25 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Plugins } from "@capacitor/core";
-const { AntViewerPlugin } = Plugins;
+const { Antourage } = Plugins;
 
 const render = () => {
-  AntViewerPlugin.configure();
+  Antourage.configure();
 
-  AntViewerPlugin.addListener("onViewerAppear", (info: any) => {
+  Antourage.addListener("onViewerAppear", (info: any) => {
     console.log("ios viewer did appear");
     // window.screen.orientation.unlock();
   });
 
-  AntViewerPlugin.addListener("onViewerDisappear", (info: any) => {
+  Antourage.addListener("onViewerDisappear", (info: any) => {
     console.log("ios viewer did disappear");
     //window.screen.orientation.lock('portrait');
   });
 
-  AntViewerPlugin.setPosition({ position: "bottomRight" });
-  AntViewerPlugin.setLocale({ locale: "en" });
-  AntViewerPlugin.setMargins({ horizontal: 10, vertical: 80 });
-  // AntViewerPlugin.lockCapacitorControllerToPortrait();
+  Antourage.setPosition({ position: "bottomRight" });
+  Antourage.setLocale({ locale: "en" });
+  Antourage.setMargins({ horizontal: 10, vertical: 80 });
+  // Antourage.lockCapacitorControllerToPortrait();
 
   ReactDOM.render(<App />, document.getElementById("root"));
 };

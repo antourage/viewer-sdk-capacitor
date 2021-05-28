@@ -28,16 +28,16 @@ import React from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import { Plugins } from '@capacitor/core';
-const { AntViewerPlugin } = Plugins;
+const { Antourage } = Plugins;
 
 const Home: React.FC<RouteComponentProps> = (props) => {
 
   useIonViewDidEnter(() => {
-    AntViewerPlugin.showWidget();
+    Antourage.showWidget();
   });
 
   useIonViewWillLeave(() => {
-    AntViewerPlugin.hideWidget()
+    Antourage.hideWidget()
   });
 
   return (
@@ -94,8 +94,8 @@ const Menu: React.FC = () => {
         menuId="first"
         contentId="main"
         type="reveal"
-        onIonDidClose={() => AntViewerPlugin.showWidget()}
-        onIonWillOpen={() => AntViewerPlugin.hideWidget()}
+        onIonDidClose={() => Antourage.showWidget()}
+        onIonWillOpen={() => Antourage.hideWidget()}
       >
         <IonContent>
           <IonList style={{ marginTop: '60px' }}>

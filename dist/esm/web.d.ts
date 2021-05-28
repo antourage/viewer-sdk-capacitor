@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
-import { AntViewerPluginPlugin } from './definitions';
-export declare class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlugin {
+import { AntouragePlugin } from './definitions';
+export declare class AntourageWeb extends WebPlugin implements AntouragePlugin {
     constructor();
     configure(): Promise<void>;
     registerNotifications(_options: {
@@ -25,5 +25,5 @@ export declare class AntViewerPluginWeb extends WebPlugin implements AntViewerPl
         locale: string;
     }): Promise<void>;
 }
-declare const AntViewerPlugin: AntViewerPluginWeb;
-export { AntViewerPlugin };
+declare const Antourage: AntourageWeb;
+export { Antourage };

@@ -7,8 +7,8 @@ import AntourageViewer
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitor.ionicframework.com/docs/plugins/ios
  */
-@objc(AntViewerPlugin)
-public class AntViewerPlugin: CAPPlugin {
+@objc(AntourageCapacitor)
+public class AntourageCapacitor: CAPPlugin {
   lazy private var widget = Antourage.shared
   
   public override func load() {

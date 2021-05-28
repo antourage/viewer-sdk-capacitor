@@ -1,8 +1,8 @@
 import { WebPlugin } from '@capacitor/core';
-export class AntViewerPluginWeb extends WebPlugin {
+export class AntourageWeb extends WebPlugin {
     constructor() {
         super({
-            name: 'AntViewerPlugin',
+            name: 'Antourage',
             platforms: ['web']
         });
     }
@@ -34,8 +34,8 @@ export class AntViewerPluginWeb extends WebPlugin {
         throw new Error("Method not implemented.");
     }
 }
-const AntViewerPlugin = new AntViewerPluginWeb();
-export { AntViewerPlugin };
+const Antourage = new AntourageWeb();
+export { Antourage };
 import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(AntViewerPlugin);
+registerWebPlugin(Antourage);
 //# sourceMappingURL=web.js.map
