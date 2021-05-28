@@ -2,36 +2,38 @@ package io.ionic.starter;
 
 import android.os.Bundle;
 
-import com.antourage.plugin.AntViewerPlugin;
+import com.antourage.plugin.AntourageCapacitor;
 import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
 
 import java.util.ArrayList;
 
 public class MainActivity extends BridgeActivity {
-    private AntViewerPlugin antPlugin;
+    private AntourageCapacitor antouragePlugin;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//     Initializes the Bridge
+        // Initializes the Bridge
         this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
             // Additional plugins you've installed go here
-            add(AntViewerPlugin.class);
+            add(AntourageCapacitor.class);
         }});
-        antPlugin = (AntViewerPlugin) getBridge().getPlugin(AntViewerPlugin.class.getSimpleName()).getInstance();
+        antouragePlugin = (AntourageCapacitor)getBridge()
+                .getPlugin("Antourage")
+                .getInstance();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        antPlugin.onPause();
+        antouragePlugin.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        antPlugin.onResume();
+        antouragePlugin.onResume();
     }
 }
