@@ -17,30 +17,9 @@ import com.getcapacitor.PluginMethod;
 public class AntViewerPlugin extends Plugin {
     private AntourageFab antFab;
 
-    // @PluginMethod()
-    // public void auth(PluginCall call) {
-    //     String apiKey = call.getString("apiKey");
-
-    //     if (apiKey == null || apiKey.isEmpty()) {
-    //         call.reject("Must provide an apiKey");
-    //         return;
-    //     }
-
-    //     String refUserId = call.getString("refUserId");
-    //     String nickname = call.getString("nickname");
-
-    //     this.getActivity().runOnUiThread(() -> {
-    //         if (antFab == null) {
-    //             antFab = new AntourageFab(getActivity());
-    //         }
-    //         AntourageFab.Companion.authWith(apiKey, refUserId, nickname, getActivity());
-    //         call.resolve();
-    //     });
-    // }
-
     @PluginMethod()
     public void configure(PluginCall call) {
-
+        AntourageFab.Companion.configure(getContext());
     }
 
     @PluginMethod()
