@@ -154,7 +154,7 @@ public protocol Content {
   var creatorNickname: Swift.String { get }
   var images: [Foundation.URL] { get }
   var date: Foundation.Date { get }
-  var broadcasterPicUrl: Swift.String? { get }
+  var creatorImageUrl: Swift.String? { get }
   var type: AntourageViewer.ContentType { get }
 }
 public protocol VideoContent : AntourageViewer.Content {
@@ -541,8 +541,9 @@ extension VideoContentMO {
   @objc(removePollsMO:) @NSManaged dynamic public func removeFromPollsMO(_ values: Foundation.NSSet)
 }
 public enum ContentType : Swift.String, Swift.Codable {
-  case vod
   case live
+  case vod
+  case video
   case post
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -1108,15 +1109,17 @@ extension ConnectionDelegate {
   final public var images: [Foundation.URL]
   final public var type: AntourageViewer.ContentType
   final public var date: Foundation.Date
+  final public var liveEndDate: Foundation.Date?
   final public var duration: Swift.String {
     get
   }
-  final public var broadcasterPicUrl: Swift.String?
+  final public var creatorImageUrl: Swift.String?
   final public var watchedTime: Swift.Int?
   final public var latestMessage: AntourageViewer.LatestComment?
   final public var isChatOn: Swift.Bool
   final public var isPollOn: Swift.Bool
   final public var shareLink: Swift.String?
+  final public func incrementViews()
   @objc deinit
 }
 public protocol PlayerMedia : Swift.CustomStringConvertible {
@@ -1244,7 +1247,7 @@ final public class Live : AntourageViewer.VideoContent, Swift.Codable {
   final public var type: AntourageViewer.ContentType
   final public var date: Foundation.Date
   final public var viewsCount: Swift.Int
-  final public var broadcasterPicUrl: Swift.String?
+  final public var creatorImageUrl: Swift.String?
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws

@@ -369,6 +369,7 @@ SWIFT_CLASS("_TtC15AntourageViewer15SeekPaddingView")
 
 
 
+
 @class ASWebAuthenticationSession;
 
 @interface UIViewController (SWIFT_EXTENSION(AntourageViewer)) <ASWebAuthenticationPresentationContextProviding>
@@ -901,6 +902,7 @@ SWIFT_CLASS("_TtC15AntourageViewer15SeekPaddingView")
 - (void)discardContentIfPossible;
 - (BOOL)isContentDiscarded SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 
