@@ -1,10 +1,10 @@
 import { WebPlugin } from '@capacitor/core';
-import { AntViewerPluginPlugin } from './definitions';
+import { AntouragePlugin } from './definitions';
 
-export class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlugin {
+export class AntourageWeb extends WebPlugin implements AntouragePlugin {
   constructor() {
     super({
-      name: 'AntViewerPlugin',
+      name: 'Antourage',
       platforms: ['web']
     });
   }
@@ -37,9 +37,9 @@ export class AntViewerPluginWeb extends WebPlugin implements AntViewerPluginPlug
   }
 }
 
-const AntViewerPlugin = new AntViewerPluginWeb();
+const Antourage = new AntourageWeb();
 
-export { AntViewerPlugin };
+export { Antourage };
 
 import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(AntViewerPlugin);
+registerWebPlugin(Antourage);

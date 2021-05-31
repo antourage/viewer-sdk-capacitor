@@ -1,9 +1,9 @@
 declare module "@capacitor/core" {
     interface PluginRegistry {
-        AntViewerPlugin: AntViewerPluginPlugin;
+        Antourage: AntouragePlugin;
     }
 }
-export interface AntViewerPluginPlugin {
+export interface AntouragePlugin {
     configure(): Promise<void>;
     setPosition(options: {
         platform: string;

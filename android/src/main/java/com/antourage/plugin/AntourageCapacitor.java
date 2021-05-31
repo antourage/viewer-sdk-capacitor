@@ -13,8 +13,8 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
-@NativePlugin()
-public class AntViewerPlugin extends Plugin {
+@NativePlugin(name = "Antourage")
+public class AntourageCapacitor extends Plugin {
     private AntourageFab antFab;
 
     @PluginMethod()
@@ -133,5 +133,4 @@ public class AntViewerPlugin extends Plugin {
             }
         });
     }
-
 }
