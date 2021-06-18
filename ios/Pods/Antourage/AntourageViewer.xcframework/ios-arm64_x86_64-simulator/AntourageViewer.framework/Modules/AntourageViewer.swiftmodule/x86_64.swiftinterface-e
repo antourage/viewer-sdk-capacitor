@@ -232,6 +232,10 @@ extension MessageMO {
     @objc get
     @objc set
   }
+  @objc @NSManaged dynamic public var avatarUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
   @objc @NSManaged dynamic public var key: Swift.String {
     @objc get
     @objc set
@@ -756,7 +760,7 @@ public struct Message {
   public let nickname: Swift.String
   public let text: Swift.String
   public let avatarUrl: Swift.String?
-  public init(userID: Swift.String, timestamp: Swift.Int = Int(Date().timeIntervalSince1970), nickname: Swift.String, text: Swift.String, key: Swift.String = "", avatarUrl: Swift.String? = nil)
+  public init(userID: Swift.String, timestamp: Swift.Int = Int(Date().timeIntervalSince1970), nickname: Swift.String, text: Swift.String, key: Swift.String = "", avatarUrl: Swift.String?)
   public init?(data: [Swift.String : Any], docID: Swift.String, date: Foundation.Date?)
   public func toAnyObject() -> [Swift.String : Any]
 }
@@ -1327,7 +1331,7 @@ extension PlayerMediaMetadata {
   public static func configure(path: Swift.String?)
   public static func registerNotifications(fcmToken: Swift.String, completionHandler: @escaping (Swift.Result<Swift.String, Swift.Error>) -> Swift.Void)
   public static func objc_registerNotifications(FCMToken: Swift.String, completionHandler: @escaping (Swift.String?, Swift.Error?) -> Swift.Void)
-  final public func showFeed()
+  final public func showFeed(animated: Swift.Bool = false, backButtonHidden: Swift.Bool = false)
 }
 extension AntWidget : AntourageViewer.ModernAVPlayerDelegate {
   final public func modernAVPlayer(_ player: AntourageViewer.ModernAVPlayer, didStateChange state: AntourageViewer.ModernAVPlayer.State)

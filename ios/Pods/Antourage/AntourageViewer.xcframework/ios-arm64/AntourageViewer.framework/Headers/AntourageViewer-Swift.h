@@ -296,6 +296,7 @@ SWIFT_CLASS_NAMED("MessageMO")
 @property (nonatomic, copy) NSString * _Nonnull text;
 @property (nonatomic) int64_t timestamp;
 @property (nonatomic, copy) NSString * _Nonnull userId;
+@property (nonatomic, copy) NSString * _Nullable avatarUrl;
 @property (nonatomic, copy) NSString * _Nonnull key;
 @property (nonatomic, strong) VideoContentMO * _Nullable content;
 @end

@@ -78,8 +78,8 @@ public class Antourage: NSObject {
   }
 
   @objc
-  public func showFeed() {
-    AntWidget.shared.showFeed()
+  public func showFeed(animated: Bool = false, backButtonHidden: Bool = false) {
+    AntWidget.shared.showFeed(animated: animated, backButtonHidden: backButtonHidden)
   }
   
   private func firebaseAuth() {
