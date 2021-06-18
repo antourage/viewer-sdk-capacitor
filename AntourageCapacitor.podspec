@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '11.3'
   s.static_framework = true
   s.dependency 'Capacitor'
-  s.dependency 'Antourage'
+  s.dependency 'Antourage', '~> 3.0.0'
 end
