@@ -1093,7 +1093,9 @@ int color ant_bg_color 0x0
 int color ant_bg_color_widget_expantion 0x0
 int color ant_black 0x0
 int color ant_blue 0x0
+int color ant_chat_hint_disabled 0x0
 int color ant_chat_input_background 0x0
+int color ant_chat_input_background_inactive 0x0
 int color ant_chat_input_stroke 0x0
 int color ant_dark_gray_2 0x0
 int color ant_dark_gray_3_a50 0x0
@@ -1128,6 +1130,7 @@ int color ant_white_a20 0x0
 int color ant_white_a30 0x0
 int color ant_white_a60 0x0
 int color ant_yellow 0x0
+int color antourage_send_button_selector 0x0
 int color background_floating_material_dark 0x0
 int color background_floating_material_light 0x0
 int color background_material_dark 0x0
@@ -1846,6 +1849,7 @@ int drawable antourage_blue_shadow 0x0
 int drawable antourage_bubble_left 0x0
 int drawable antourage_bubble_right 0x0
 int drawable antourage_chat_input_bg_stroke 0x0
+int drawable antourage_chat_input_bg_stroke_inactive 0x0
 int drawable antourage_circle_blue 0x0
 int drawable antourage_dark_shadow 0x0
 int drawable antourage_fab_badge_rounded_background_live 0x0

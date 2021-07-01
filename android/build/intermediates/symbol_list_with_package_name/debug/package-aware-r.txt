@@ -1094,7 +1094,9 @@ color ant_bg_color
 color ant_bg_color_widget_expantion
 color ant_black
 color ant_blue
+color ant_chat_hint_disabled
 color ant_chat_input_background
+color ant_chat_input_background_inactive
 color ant_chat_input_stroke
 color ant_dark_gray_2
 color ant_dark_gray_3_a50
@@ -1129,6 +1131,7 @@ color ant_white_a20
 color ant_white_a30
 color ant_white_a60
 color ant_yellow
+color antourage_send_button_selector
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1847,6 +1850,7 @@ drawable antourage_blue_shadow
 drawable antourage_bubble_left
 drawable antourage_bubble_right
 drawable antourage_chat_input_bg_stroke
+drawable antourage_chat_input_bg_stroke_inactive
 drawable antourage_circle_blue
 drawable antourage_dark_shadow
 drawable antourage_fab_badge_rounded_background_live

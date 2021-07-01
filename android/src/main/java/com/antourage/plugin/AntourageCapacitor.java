@@ -19,7 +19,7 @@ public class AntourageCapacitor extends Plugin {
 
     @PluginMethod()
     public void configure(PluginCall call) {
-        AntourageFab.Companion.configure(getContext());
+        AntourageFab.Companion.configure(getContext(), false);
     }
 
     @PluginMethod()
