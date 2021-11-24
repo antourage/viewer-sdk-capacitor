@@ -1,6 +1,6 @@
 {
   "name": "antourage-capacitor",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Antourage Capacitor Plugin for Android and iOS",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
