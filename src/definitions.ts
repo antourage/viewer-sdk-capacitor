@@ -15,6 +15,8 @@ export interface AntouragePlugin {
   setNameTextColor(options: { color: string }): Promise<void>;
   setNameBackgroundColor(options: { color: string }): Promise<void>;
   setBottomMargin(options: { platform: string; margin: number }): Promise<void>;
+  registerNotifications(options: { fcmToken: string; }): Promise<{ topic: string }>;
+  unregisterNotifications(): Promise<void>;
   showWidget(): Promise<void>;
   hideWidget(): Promise<void>;
 }

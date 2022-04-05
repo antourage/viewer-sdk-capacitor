@@ -11,7 +11,6 @@ export class AntourageWeb extends WebPlugin implements AntouragePlugin {
   configure(_options: { teamId: number }): Promise<void> {
     throw new Error("Method not implemented.");
   }
-
   setPortalColor(_options: { color: string }): Promise<void> {
     throw new Error("Method not implemented.");
   }
@@ -36,21 +35,19 @@ export class AntourageWeb extends WebPlugin implements AntouragePlugin {
   setNameBackgroundColor(_options: { color: string }): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  registerNotifications(_options: {
-    fcmToken: string;
-  }): Promise<{ topic: string }> {
+  setBottomMargin(_options: { platform: string; margin: number; }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  registerNotifications(_options: { fcmToken: string; }): Promise<{ topic: string }> {
+    throw new Error("Method not implemented.");
+  }
+  unregisterNotifications(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   showWidget(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   hideWidget(): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  setBottomMargin(_options: {
-    platform: string;
-    margin: number;
-  }): Promise<void> {
     throw new Error("Method not implemented.");
   }
 }
