@@ -1,20 +1,44 @@
-import { WebPlugin } from '@capacitor/core';
-import { AntouragePlugin } from './definitions';
+import { WebPlugin } from "@capacitor/core";
+import { AntouragePlugin } from "./definitions";
 
 export class AntourageWeb extends WebPlugin implements AntouragePlugin {
   constructor() {
     super({
-      name: 'Antourage',
-      platforms: ['web']
+      name: "Antourage",
+      platforms: ["web"],
     });
   }
-  configure(): Promise<void> {
+  configure(_options: { teamId: number }): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  registerNotifications(_options: { fcmToken: string; }): Promise<{ topic: string; }> {
+
+  setPortalColor(_options: { color: string }): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  showFeedScreen(): Promise<void> {
+  setCtaBackgroundColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setCtaTextColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setLiveDotColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setTitleTextColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setTitleBackgroundColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setNameTextColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  setNameBackgroundColor(_options: { color: string }): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  registerNotifications(_options: {
+    fcmToken: string;
+  }): Promise<{ topic: string }> {
     throw new Error("Method not implemented.");
   }
   showWidget(): Promise<void> {
@@ -23,16 +47,10 @@ export class AntourageWeb extends WebPlugin implements AntouragePlugin {
   hideWidget(): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  setPosition(_options: { platform: string; position: string; }): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  setMargins(_options: { platform: string; horizontal: number; vertical: number; }): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  lockCapacitorControllerToPortrait(): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  setLocale(_options: { locale: string; }): Promise<void> {
+  setBottomMargin(_options: {
+    platform: string;
+    margin: number;
+  }): Promise<void> {
     throw new Error("Method not implemented.");
   }
 }
@@ -41,5 +59,5 @@ const Antourage = new AntourageWeb();
 
 export { Antourage };
 
-import { registerWebPlugin } from '@capacitor/core';
+import { registerWebPlugin } from "@capacitor/core";
 registerWebPlugin(Antourage);

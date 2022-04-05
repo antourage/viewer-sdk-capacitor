@@ -5,12 +5,16 @@ declare module "@capacitor/core" {
 }
 
 export interface AntouragePlugin {
-  configure(): Promise<void>;
-  setPosition(options: { platform: string, position: string }): Promise<void>;
-  setMargins(options: { platform: string, horizontal: number, vertical: number }): Promise<void>;
-  lockCapacitorControllerToPortrait(): Promise<void>;
-  setLocale(options: { locale: string }): Promise<void>;
-  showFeedScreen(): Promise<void>;
+  configure(options: { teamId: number }): Promise<void>;
+  setPortalColor(options: { color: string }): Promise<void>;
+  setCtaBackgroundColor(options: { color: string }): Promise<void>;
+  setCtaTextColor(options: { color: string }): Promise<void>;
+  setLiveDotColor(options: { color: string }): Promise<void>;
+  setTitleTextColor(options: { color: string }): Promise<void>;
+  setTitleBackgroundColor(options: { color: string }): Promise<void>;
+  setNameTextColor(options: { color: string }): Promise<void>;
+  setNameBackgroundColor(options: { color: string }): Promise<void>;
+  setBottomMargin(options: { platform: string; margin: number }): Promise<void>;
   showWidget(): Promise<void>;
   hideWidget(): Promise<void>;
 }

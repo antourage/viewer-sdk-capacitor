@@ -6,7 +6,7 @@ import { Plugins } from "@capacitor/core";
 const { Antourage } = Plugins;
 
 const render = () => {
-  Antourage.configure();
+  Antourage.configure({ teamId: 1 });
 
   Antourage.addListener("onViewerAppear", (info: any) => {
     console.log("ios viewer did appear");
@@ -18,10 +18,23 @@ const render = () => {
     //window.screen.orientation.lock('portrait');
   });
 
-  Antourage.setPosition({ position: "bottomRight" });
-  Antourage.setLocale({ locale: "en" });
-  Antourage.setMargins({ horizontal: 10, vertical: 80 });
+  /**
+   * Library method samples
+
+  // Antourage.setPortalColor({ color: "#FF0000" });
+  // Antourage.setCtaBackgroundColor({ color: "#000000" });
+  // Antourage.setCtaTextColor({ color: "#FF0000" });
+
+  // Antourage.setLiveDotColor({ color: "#FFFFFF" });
+  // Antourage.setTitleTextColor({ color: "#FFFFFF" });
+  // Antourage.setTitleBackgroundColor({ color: "#000000" });
+  // Antourage.setNameTextColor({ color: "#FFFFFF" });
+  // Antourage.setNameBackgroundColor({ color: "#000000" });
+
+  // Antourage.setBottomMargin({ margin: 0 });
   // Antourage.lockCapacitorControllerToPortrait();
+
+ */
 
   ReactDOM.render(<App />, document.getElementById("root"));
 };

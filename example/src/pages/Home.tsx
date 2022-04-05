@@ -20,24 +20,23 @@ import {
   useIonViewDidEnter,
   useIonViewDidLeave,
   useIonViewWillEnter,
-  useIonViewWillLeave
-} from '@ionic/react';
-import { add } from 'ionicons/icons';
-import { RouteComponentProps } from 'react-router-dom';
-import React from 'react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
-import { Plugins } from '@capacitor/core';
+  useIonViewWillLeave,
+} from "@ionic/react";
+import { add } from "ionicons/icons";
+import { RouteComponentProps } from "react-router-dom";
+import React from "react";
+import ExploreContainer from "../components/ExploreContainer";
+import "./Home.css";
+import { Plugins } from "@capacitor/core";
 const { Antourage } = Plugins;
 
 const Home: React.FC<RouteComponentProps> = (props) => {
-
   useIonViewDidEnter(() => {
     Antourage.showWidget();
   });
 
   useIonViewWillLeave(() => {
-    Antourage.hideWidget()
+    Antourage.hideWidget();
   });
 
   return (
@@ -54,7 +53,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
               </IonLabel>
               <IonBadge color="success" slot="end">
                 5 Days
-        </IonBadge>
+              </IonBadge>
             </IonItem>
             <IonItem>
               <IonCheckbox slot="start" />
@@ -64,11 +63,11 @@ const Home: React.FC<RouteComponentProps> = (props) => {
               </IonLabel>
               <IonBadge color="success" slot="end">
                 5 Days
-        </IonBadge>
+              </IonBadge>
             </IonItem>
           </IonList>
-          <IonFab vertical="bottom" horizontal="end" slot="fixed">
-            <IonFabButton onClick={() => props.history.push('/new')}>
+          <IonFab vertical="bottom" horizontal="start" slot="fixed">
+            <IonFabButton onClick={() => props.history.push("/new")}>
               <IonIcon icon={add} />
             </IonFabButton>
           </IonFab>
@@ -81,11 +80,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
 export default Home;
 
-
 const Menu: React.FC = () => {
-  const event: any = () => {
-
-  }
+  const event: any = () => {};
 
   return (
     <>
@@ -98,7 +94,7 @@ const Menu: React.FC = () => {
         onIonWillOpen={() => Antourage.hideWidget()}
       >
         <IonContent>
-          <IonList style={{ marginTop: '60px' }}>
+          <IonList style={{ marginTop: "60px" }}>
             <IonItem>Menu Item 1</IonItem>
             <IonItem>Menu Item</IonItem>
             <IonItem>Menu Item</IonItem>
@@ -117,5 +113,5 @@ const Menu: React.FC = () => {
       </IonHeader>
       <IonRouterOutlet></IonRouterOutlet>
     </>
-  )
-}
+  );
+};
