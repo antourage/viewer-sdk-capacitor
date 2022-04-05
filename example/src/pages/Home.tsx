@@ -18,8 +18,6 @@ import {
   IonButtons,
   IonMenuButton,
   useIonViewDidEnter,
-  useIonViewDidLeave,
-  useIonViewWillEnter,
   useIonViewWillLeave,
 } from "@ionic/react";
 import { add } from "ionicons/icons";
