@@ -8,11 +8,7 @@ import AntourageViewer
  */
 @objc(AntourageCapacitor)
 public class AntourageCapacitor: CAPPlugin {
-    private var widget: Widget = {
-        let widget = Widget()
-        widget.translatesAutoresizingMaskIntoConstraints = false
-        return widget
-    }()
+    private var widget: Widget!
     private var bottomConstraint: NSLayoutConstraint?
     private var bottomMargin: CGFloat = 0 {
         didSet {
@@ -29,6 +25,12 @@ public class AntourageCapacitor: CAPPlugin {
         }
 
         Antourage.shared.teamID = teamID
+
+        DispatchQueue.main.async {
+            let widget = Widget()
+            widget.translatesAutoresizingMaskIntoConstraints = false
+            self.widget = widget
+        }
     }
 
     @objc
