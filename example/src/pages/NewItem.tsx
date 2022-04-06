@@ -17,7 +17,7 @@ const NewItem: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton />
                     </IonButtons>
-                    <IonTitle>Blank</IonTitle>
+                    <IonTitle>New Item</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent></IonContent>
