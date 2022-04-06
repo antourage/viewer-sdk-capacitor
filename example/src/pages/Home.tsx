@@ -23,7 +23,6 @@ import {
 import { add } from "ionicons/icons";
 import { RouteComponentProps } from "react-router-dom";
 import React from "react";
-import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
 import { Plugins } from "@capacitor/core";
 const { Antourage } = Plugins;
@@ -69,7 +68,6 @@ const Home: React.FC<RouteComponentProps> = (props) => {
               <IonIcon icon={add} />
             </IonFabButton>
           </IonFab>
-          <ExploreContainer />
         </IonContent>
       </IonPage>
     </>
