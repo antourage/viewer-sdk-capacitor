@@ -24,7 +24,11 @@ public class AntourageCapacitor: CAPPlugin {
             return call.reject("Must provide a teamId")
         }
 
-        Antourage.shared.teamID = teamID
+        if let localization = call.getString("localization") {
+            Antourage.shared.configure(teamID: teamID, localization: localization)
+        } else {
+            Antourage.shared.configure(teamID: teamID)
+        }
 
         DispatchQueue.main.async {
             let widget = Widget()

@@ -8,7 +8,7 @@ export class AntourageWeb extends WebPlugin implements AntouragePlugin {
       platforms: ["web"],
     });
   }
-  configure(_options: { teamId: number }): Promise<void> {
+  configure(_options: { teamId: number, localization: string }): Promise<void> {
     throw new Error("Method not implemented.");
   }
   setPortalColor(_options: { color: string }): Promise<void> {
