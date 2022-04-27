@@ -10,8 +10,8 @@ import androidx.activity.ComponentActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.lifecycle.Lifecycle;
 
-import com.antourage.weaverlib.ui.fab.AntourageFab;
-import com.antourage.weaverlib.ui.fab.RegisterPushNotificationsResult;
+import com.antourage.weaverlib.other.models.RegisterPushNotificationsResult;
+import com.antourage.weaverlib.ui.AntourageFab;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
@@ -35,7 +35,8 @@ public class AntourageCapacitor extends Plugin {
     @PluginMethod()
     public void configure(PluginCall call) {
         int teamId = call.getInt("teamId");
-        AntourageFab.Companion.configure(getContext(), teamId);
+        String localization = call.getString("localization");
+        AntourageFab.Companion.configure(getContext(), teamId, localization);
     }
 
     public void setLifecycle(Lifecycle lifecycle) {
