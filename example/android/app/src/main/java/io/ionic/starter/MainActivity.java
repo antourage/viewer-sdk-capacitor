@@ -26,14 +26,8 @@ public class MainActivity extends BridgeActivity {
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        antouragePlugin.onPause();
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
-        antouragePlugin.onResume();
+        antouragePlugin.setLifecycle(getLifecycle());
     }
 }

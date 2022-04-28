@@ -1,12 +1,17 @@
 package com.antourage.plugin;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Color;
+import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
-import com.antourage.weaverlib.screens.base.AntourageActivity;
-import com.antourage.weaverlib.ui.fab.AntourageFab;
-import com.antourage.weaverlib.ui.fab.RegisterPushNotificationsResult;
+import androidx.activity.ComponentActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.lifecycle.Lifecycle;
+
+import com.antourage.weaverlib.other.models.RegisterPushNotificationsResult;
+import com.antourage.weaverlib.ui.AntourageFab;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
@@ -15,50 +20,144 @@ import com.getcapacitor.PluginMethod;
 
 @NativePlugin(name = "Antourage")
 public class AntourageCapacitor extends Plugin {
-    private AntourageFab antFab;
+    private static AntourageFab antFab;
+    private Lifecycle currentLifecycle;
+    private int bottomMargin;
+    private static final int MAX_BOTTOM_MARGIN = 220;
+
+    private synchronized static AntourageFab getView(Activity activity) {
+        if (antFab == null) {
+            antFab = new AntourageFab(activity);
+        }
+        return antFab;
+    }
 
     @PluginMethod()
     public void configure(PluginCall call) {
-        AntourageFab.Companion.configure(getContext(), false);
+        int teamId = call.getInt("teamId");
+        String localization = call.getString("localization");
+        AntourageFab.Companion.configure(getContext(), teamId, localization);
+    }
+
+    public void setLifecycle(Lifecycle lifecycle) {
+        currentLifecycle = lifecycle;
+        if (antFab != null) {
+            antFab.setLifecycle(currentLifecycle);
+        }
     }
 
     @PluginMethod()
-    public void setPosition(PluginCall call) {
-        String position = call.getString("position");
-        if (call.getString("platform") == "ios") {
-            return;
-        }
-        if (position == null || position.isEmpty()) {
-            call.reject("Must provide valid position");
+    public void setPortalColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
             return;
         }
         this.getActivity().runOnUiThread(() -> {
-            if (antFab != null) antFab.setPosition(position);
+            getView(getActivity()).setPortalColor(Color.parseColor(color));
         });
     }
 
     @PluginMethod()
-    public void setMargins(PluginCall call) {
-        Integer horizontal = call.getInt("horizontal");
-        Integer vertical = call.getInt("vertical");
-        if (call.getString("platform") == "ios" || horizontal == null || vertical == null) {
+    public void setCtaBackgroundColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
             return;
         }
         this.getActivity().runOnUiThread(() -> {
-            if (antFab != null) antFab.setMargins(horizontal, vertical);
+            getView(getActivity()).setCtaBackgroundColor(Color.parseColor(color));
         });
-
     }
 
     @PluginMethod()
-    public void lockCapacitorControllerToPortrait(PluginCall call) {
-    } //iOS only
+    public void setCtaTextColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
+            return;
+        }
+        this.getActivity().runOnUiThread(() -> {
+            getView(getActivity()).setCtaTextColor(Color.parseColor(color));
+        });
+    }
 
     @PluginMethod()
-    public void showFeedScreen(PluginCall call) {
-        Intent intent = new Intent(getContext(), AntourageActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        getActivity().startActivity(intent);
+    public void setLiveDotColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
+            return;
+        }
+        this.getActivity().runOnUiThread(() -> {
+            getView(getActivity()).setLiveDotColor(Color.parseColor(color));
+        });
+    }
+
+    @PluginMethod()
+    public void setTitleTextColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
+            return;
+        }
+        this.getActivity().runOnUiThread(() -> {
+            getView(getActivity()).setTitleTextColor(Color.parseColor(color));
+        });
+    }
+
+    @PluginMethod()
+    public void setTitleBackgroundColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
+            return;
+        }
+        this.getActivity().runOnUiThread(() -> {
+            getView(getActivity()).setTitleBackgroundColor(Color.parseColor(color));
+        });
+    }
+
+    @PluginMethod()
+    public void setNameTextColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
+            return;
+        }
+        this.getActivity().runOnUiThread(() -> {
+            getView(getActivity()).setNameTextColor(Color.parseColor(color));
+        });
+    }
+
+    @PluginMethod()
+    public void setNameBackgroundColor(PluginCall call) {
+        String color = call.getString("color");
+        if (color == null || color.isEmpty()) {
+            call.reject("Must provide valid color");
+            return;
+        }
+        this.getActivity().runOnUiThread(() -> {
+            getView(getActivity()).setNameBackgroundColor(Color.parseColor(color));
+        });
+    }
+
+    @PluginMethod()
+    public void setBottomMargin(PluginCall call) {
+        Integer margin = call.getInt("margin");
+        if (call.getString("platform") == "ios" || margin == null) {
+            return;
+        }
+        bottomMargin = margin;
+        this.getActivity().runOnUiThread(() -> {
+            CoordinatorLayout.LayoutParams params = new CoordinatorLayout.LayoutParams(
+                    FrameLayout.LayoutParams.WRAP_CONTENT,
+                    FrameLayout.LayoutParams.WRAP_CONTENT);
+            params.gravity = Gravity.BOTTOM | Gravity.END;
+            params.setMargins(0, 0, 0, validateBottomMargin(bottomMargin));
+            if (currentLifecycle != null) antFab.setLifecycle(currentLifecycle);
+            getView(getActivity()).setLayoutParams(params);
+        });
     }
 
     @PluginMethod()
@@ -70,7 +169,7 @@ public class AntourageCapacitor extends Plugin {
             return;
         }
 
-        AntourageFab.Companion.registerNotifications(fcmToken, result -> {
+        AntourageFab.Companion.registerNotifications(fcmToken,  result -> {
             if (result instanceof RegisterPushNotificationsResult.Failure) {
                 call.reject(((RegisterPushNotificationsResult.Failure) result).getCause());
             } else if (result instanceof RegisterPushNotificationsResult.Success) {
@@ -85,52 +184,46 @@ public class AntourageCapacitor extends Plugin {
 
     @PluginMethod()
     public void showWidget(PluginCall call) {
-        this.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Activity activity = getActivity();
-                if (antFab == null) {
-                    antFab = new AntourageFab(activity);
-                }
-                if (antFab.getParent() == null) {
-                    antFab.showFab(activity);
-                    antFab.onResume();
-                }
+        this.getActivity().runOnUiThread(() -> {
+            ComponentActivity activity = getActivity();
+            if (antFab == null) {
+                antFab = new AntourageFab(activity);
+            }
+            if (antFab.getParent() == null) {
+                ViewGroup viewGroup = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+                CoordinatorLayout.LayoutParams params = new CoordinatorLayout.LayoutParams(
+                        FrameLayout.LayoutParams.WRAP_CONTENT,
+                        FrameLayout.LayoutParams.WRAP_CONTENT);
+                params.gravity = Gravity.BOTTOM | Gravity.END;
+                params.setMargins(0, 0, 0, validateBottomMargin(bottomMargin));
+                if (currentLifecycle != null) antFab.setLifecycle(currentLifecycle);
+                viewGroup.addView(antFab, params);
             }
         });
     }
 
     @PluginMethod()
     public void hideWidget(PluginCall call) {
-        this.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Activity activity = getActivity();
-                ViewGroup viewGroup = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
-                antFab.onPause();
-                viewGroup.removeView(antFab);
-            }
+        this.getActivity().runOnUiThread(() -> {
+            Activity activity = getActivity();
+            ViewGroup viewGroup = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+            viewGroup.removeView(antFab);
         });
     }
 
-    @PluginMethod()
-    public void onPause() {
-        if (antFab != null) antFab.onPause();
+    private int validateBottomMargin(int marginInDp){
+        if(marginInDp < 0){
+            return 0;
+        }else if(marginInDp > MAX_BOTTOM_MARGIN){
+            return dp2px(MAX_BOTTOM_MARGIN);
+        }else{
+            return dp2px(marginInDp);
+        }
     }
 
-    @PluginMethod()
-    public void onResume() {
-        if (antFab != null) antFab.onResume();
-    }
 
-    @PluginMethod()
-    public void setLocale(PluginCall call) {
-        this.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                String lang = call.getString("locale");
-                if (antFab != null) antFab.setLocale(lang);
-            }
-        });
+    public int dp2px(final int dp) {
+        if(getContext() == null) return 0;
+        return (int) (dp * getContext().getResources().getDisplayMetrics().density);
     }
 }

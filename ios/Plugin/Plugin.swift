@@ -1,6 +1,5 @@
 import Foundation
 import Capacitor
-import Antourage
 import AntourageViewer
 
 /**
@@ -9,106 +8,215 @@ import AntourageViewer
  */
 @objc(AntourageCapacitor)
 public class AntourageCapacitor: CAPPlugin {
-  lazy private var widget = Antourage.shared
-  
-  public override func load() {
-    super.load()
-    widget.onViewerAppear = { [weak self] _ in
-      self?.notifyListeners("onViewerAppear", data: [:])
+    private var widget: Widget!
+    private var bottomConstraint: NSLayoutConstraint?
+    private var bottomMargin: CGFloat = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.bottomConstraint?.constant = self.bottomMargin
+            }
+        }
     }
-    widget.onViewerDisappear = { [weak self] _ in
-      self?.notifyListeners("onViewerDisappear", data: [:])
-    }
-  }
-  
-  @objc
-  func showWidget(_ call: CAPPluginCall) {
-    DispatchQueue.main.async { [weak self] in
-      guard
-        self?.widget.view.superview == nil,
-        let widgetView = self?.widget.view else { return }
-      let mainView = self?.bridge.viewController.view
-      mainView?.addSubview(widgetView)
-    }
-  }
-  
-  @objc
-  func hideWidget(_ call: CAPPluginCall) {
-    DispatchQueue.main.async {
-      self.widget.view.removeFromSuperview()
-    }
-  }
-  
-  @objc
-  func lockCapacitorControllerToPortrait(_ call: CAPPluginCall) {
-    DispatchQueue.main.async {
-      guard let controller = self.bridge.viewController as? CAPBridgeViewController else { return }
-      controller.supportedOrientations = [UIInterfaceOrientation.portrait.rawValue]
-    }
-  }
 
-  @objc
-  func setPosition(_ call: CAPPluginCall) {
-    guard call.getString("platform") != "android" else {
-      return
-    }
-    guard let positionString = call.getString("position"),
-      let position = WidgetPosition(rawValue: positionString) else {
-      return call.reject("Must provide valid position")
-    }
-    DispatchQueue.main.async {
-      self.widget.widgetPosition = position
-    }
-  }
+    @objc
+    func configure(_ call: CAPPluginCall) {
+        guard let teamID = call.getInt("teamId") else {
+            return call.reject("Must provide a teamId")
+        }
 
-  @objc
-  func setMargins(_ call: CAPPluginCall) {
-    guard call.getString("platform") != "android",
-      let horizontal = call.getFloat("horizontal"),
-      let vertical = call.getFloat("vertical") else {
-      return 
+        if let localization = call.getString("localization") {
+            Antourage.shared.configure(teamID: teamID, localization: localization)
+        } else {
+            Antourage.shared.configure(teamID: teamID)
+        }
+
+        DispatchQueue.main.async {
+            let widget = Widget()
+            widget.translatesAutoresizingMaskIntoConstraints = false
+            self.widget = widget
+        }
     }
-    let margins = UIOffset(horizontal: CGFloat(horizontal), vertical: CGFloat(vertical))
-    DispatchQueue.main.async {
-      self.widget.widgetMargins = margins
+
+    @objc
+    func registerNotifications(_ call: CAPPluginCall) {
+        guard let fcmToken = call.getString("fcmToken") else {
+            return call.reject("Must provide an fcmToken")
+        }
+
+        Antourage.shared.registerForRemoteNotifications(fcmToken: fcmToken) { topic in
+            if let topic = topic {
+                call.resolve(["topic": topic])
+            } else {
+                call.reject("Failed to register notifications")
+            }
+        }
     }
-  }
-  
-  @objc
-  func configure(_ call: CAPPluginCall) {
-    Antourage.configure()
-  }
-  
-  @objc
-  func registerNotifications(_ call: CAPPluginCall) {
-    guard let fcmToken = call.getString("fcmToken") else {
-      return call.reject("Must provide an fcmToken")
+
+    @objc
+    func unregisterNotifications(_ call: CAPPluginCall) {
+        Antourage.shared.unregisterForRemoteNotifications { success in
+            if success {
+                call.resolve()
+            } else {
+                call.reject("Failed to unregister notifications")
+            }
+        }
     }
-    
-    Antourage.registerNotifications(fcmToken: fcmToken) { result in
-      switch result {
-      case .success(let topic):
-        call.resolve(["topic": topic])
-      case .failure(let error):
-        call.reject(error.localizedDescription)
-      }
+
+    @objc
+    func showWidget(_ call: CAPPluginCall) {
+        DispatchQueue.main.async { [self] in
+            guard widget.superview == nil, let superview = bridge.viewController.view else { return }
+            superview.addSubview(widget)
+
+            widget.trailingAnchor.constraint(equalTo: superview.trailingAnchor).isActive = true
+            bottomConstraint = superview.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: widget.bottomAnchor, constant: bottomMargin)
+            bottomConstraint?.isActive = true
+        }
     }
-  }
-  
-  @objc
-  func showFeedScreen(_ call: CAPPluginCall) {
-    DispatchQueue.main.async {
-      self.widget.showFeed()
+
+    @objc
+    func hideWidget(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            self.widget.removeFromSuperview()
+        }
     }
-  }
-  
-  @objc
-  func setLocale(_ call: CAPPluginCall) {
-    guard let locale = call.getString("locale") else {
-      return call.reject("Must provide a locale")
+
+    @objc
+    func setBottomMargin(_ call: CAPPluginCall) {
+        guard call.getString("platform") != "android", let margin = call.getFloat("margin") else {
+            return
+        }
+
+        bottomMargin = CGFloat(margin)
     }
-    DispatchQueue.main.async {
-      self.widget.widgetLocale = WidgetLocale(rawValue: locale)
+
+    @objc
+    func setPortalColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.portalColor = color
+        }
     }
-  }
+
+    @objc
+    func setNameTextColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.nameTextColor = color
+        }
+    }
+
+    @objc
+    func setNameBackgroundColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.nameBackgroundColor = color
+        }
+    }
+
+    @objc
+    func setTitleTextColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.titleTextColor = color
+        }
+    }
+
+    @objc
+    func setTitleBackgroundColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.titleBackgroundColor = color
+        }
+    }
+
+    @objc
+    func setCtaTextColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.ctaTextColor = color
+        }
+    }
+
+    @objc
+    func setCtaBackgroundColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.ctaBackgroundColor = color
+        }
+    }
+
+    @objc
+    func setLiveDotColor(_ call: CAPPluginCall) {
+        guard let colorString = call.getString("color"), let color = UIColor(hex: colorString) else {
+            call.reject("Must provide a valid color")
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.widget.liveDotColor = color
+        }
+    }
+}
+
+extension UIColor {
+    convenience init?(hex: String) {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+
+        var rgb: UInt64 = 0
+
+        var r: CGFloat = 0.0
+        var g: CGFloat = 0.0
+        var b: CGFloat = 0.0
+        var a: CGFloat = 1.0
+
+        let length = hexSanitized.count
+
+        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { return nil }
+
+        if length == 6 {
+            r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+            g = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+            b = CGFloat(rgb & 0x0000FF) / 255.0
+        } else if length == 8 {
+            r = CGFloat((rgb & 0xFF000000) >> 24) / 255.0
+            g = CGFloat((rgb & 0x00FF0000) >> 16) / 255.0
+            b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
+            a = CGFloat(rgb & 0x000000FF) / 255.0
+        } else {
+            return nil
+        }
+
+        self.init(red: r, green: g, blue: b, alpha: a)
+    }
 }
